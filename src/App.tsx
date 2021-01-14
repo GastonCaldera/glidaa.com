@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { readRemoteFile } from 'react-papaparse';
 import Graphic from './data/Graphic';
-import ScrollyTeller from './scrolly-teller';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';

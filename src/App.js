@@ -1,8 +1,10 @@
-import React, { useRef, useMemo } from "react";
-import { Canvas, useFrame } from "react-three-fiber";
-import { Helmet } from "react-helmet";
-import * as THREE from "three";
-import "./styles.css";
+import React, { useRef, useMemo, useState, useEffect } from 'react';
+import { Canvas, useFrame } from 'react-three-fiber';
+import { Helmet } from 'react-helmet';
+import * as THREE from 'three';
+import './styles.css';
+import 'intersection-observer';
+import scrollama from 'scrollama';
 
 const numParticles = 2500;
 
@@ -62,15 +64,15 @@ const Map = (props) => {
 
   return (
     <points {...props} ref={waves}>
-      <bufferGeometry attach={"geometry"}>
+      <bufferGeometry attach={'geometry'}>
         <bufferAttribute
-          attachObject={["attributes", "position"]}
+          attachObject={['attributes', 'position']}
           array={nodes.current}
           count={nodes.current.length / 3}
           itemSize={3}
         />
         <bufferAttribute
-          attachObject={["attributes", "scale"]}
+          attachObject={['attributes', 'scale']}
           array={scale.current}
           count={scale.current.length}
           itemSize={1}
@@ -81,12 +83,11 @@ const Map = (props) => {
         args={[
           {
             uniforms: {
-              color: { value: new THREE.Color("#b37cbd") }
+              color: { value: new THREE.Color('#b37cbd') },
             },
-            vertexShader: document.getElementById("vertexshader").textContent,
-            fragmentShader: document.getElementById("fragmentshader")
-              .textContent
-          }
+            vertexShader: document.getElementById('vertexshader').textContent,
+            fragmentShader: document.getElementById('fragmentshader').textContent,
+          },
         ]}
       />
     </points>
@@ -94,6 +95,35 @@ const Map = (props) => {
 };
 
 export default function App() {
+  useEffect(() => {
+    // instantiate the scrollama
+    const scroller = scrollama();
+
+    // setup the instance, pass callback functions
+    scroller
+      .setup({
+        step: '.step',
+      })
+      .onStepEnter((response) => {
+        // { element, index, direction }
+        if (response.index === 1) {
+          response.element.style.background = 'coral';
+        } else if (response.index === 2) {
+          response.element.style.background = 'green';
+        } else {
+          response.element.style.background = 'grey';
+        }
+      })
+      .onStepExit((response) => {
+        // { element, index, direction }
+      });
+
+    // setup resize event
+    window.addEventListener('resize', scroller.resize);
+
+    return () => window.removeEventListener('resize', scroller.resize);
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -105,6 +135,16 @@ export default function App() {
           {`uniform vec3 color;\nvoid main() {\n\tif ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;\n\tgl_FragColor = vec4( color, 1.0 );\n}`}
         </script>
       </Helmet>
+
+      <div className="step" data-step="a">
+        <div className="demo--step"> </div>
+      </div>
+      <div className="step" data-step="b">
+        <div className="demo--step"> </div>
+      </div>
+      <div className="step" data-step="c">
+        <div className="demo--step"> </div>
+      </div>
 
       <div className="App">
         <Canvas gl camera={{ position: [0, 500, 1000], far: 10000 }}>

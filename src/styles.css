@@ -8,3 +8,7 @@
 .demo--step {
   height: 100vh;
 }
+
+.demo--step h1 {
+  text-align: center;
+}

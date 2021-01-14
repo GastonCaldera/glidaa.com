@@ -115,7 +115,13 @@ export default function App() {
         }
       })
       .onStepExit((response) => {
-        // { element, index, direction }
+        if (response.index === 1) {
+          response.element.style.background = 'white';
+        } else if (response.index === 2) {
+          response.element.style.background = 'white';
+        } else {
+          response.element.style.background = 'white';
+        }
       });
 
     // setup resize event
@@ -137,13 +143,19 @@ export default function App() {
       </Helmet>
 
       <div className="step" data-step="a">
-        <div className="demo--step"> </div>
+        <div className="demo--step">
+          <h1>Demo story teller</h1>
+        </div>
       </div>
       <div className="step" data-step="b">
-        <div className="demo--step"> </div>
+        <div className="demo--step">
+          <h1>Demo story teller</h1>
+        </div>
       </div>
       <div className="step" data-step="c">
-        <div className="demo--step"> </div>
+        <div className="demo--step">
+          <h1>Demo story teller</h1>
+        </div>
       </div>
 
       <div className="App">

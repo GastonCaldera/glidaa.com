@@ -47,7 +47,3 @@ export default class App {
       });
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  window.app = new App();
-});

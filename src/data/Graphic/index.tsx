@@ -12,7 +12,6 @@ interface GraphicProps {
 }
 
 const Graphic: React.FC<GraphicProps> = ({ panel }) => {
-  console.log(panel)
 
   const config1 = {
     loop: true,

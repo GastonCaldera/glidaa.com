@@ -4,11 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const app = new App()
-
 ReactDOM.render(
   <React.StrictMode>
-    {app}
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

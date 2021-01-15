@@ -17,10 +17,7 @@ export const updateSvgImage = (graphId, state, previousSvgFileName) => {
   } = state;
   if (isNil(svgFileName)) {
     const graph = select(`#${graphId} .imageDiv`);
-    graph
-      .transition()
-      .duration(250)
-      .style('opacity', 0);
+    graph.transition().duration(250).style('opacity', 0);
   }
   if (svgFileName !== previousSvgFileName) {
     const html = svgFileName

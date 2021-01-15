@@ -5,8 +5,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
 import './scss/style.scss';
-import ScrollyTeller from './ScrollyTeller/ScrollyTeller';
-import intro from './Introduction/scrollyTellerConfig'
+import ScrollyTeller from '@ihmeuw/scrollyteller/src/ScrollyTeller/ScrollyTeller';
+import './data/narration.csv';
+import './data/33172-01-finishig-studies.json'
 
 AOS.init({
   // Global settings:
@@ -36,7 +37,6 @@ const App = () => {
   const [girlOnFloor, setGirlOnFloor] = useState(false);
   const [coworkers, setCoworkers] = useState(false);
   const [treadmill, setTreadmill] = useState(false);
-  const app = new AppScrollyTeller()
 
   readRemoteFile('./finishing-studies.csv', {
     header: true,
@@ -80,28 +80,58 @@ const App = () => {
   );
 };
 
-class AppScrollyTeller {
+export default App;
+
+const myExampleSection0 = {
+    sectionIdentifier: 'myExampleSection0',
+    narration: 'data/narration.csv',
+    data: 'data/33190-girl-on-floor.json',
+    reshapeDataFunction:
+      function processDataFunction(data) { return console.log(data); },
+
+    buildGraphFunction:
+      function buildChart(graphId, sectionConfig) {
+        const myChart = {}; // build your own chart instance
+        return myChart; // return it
+      },
+
+    onScrollFunction:
+      function onScroll({ index, progress, element, trigger, graphContainerId, graphId, sectionConfig }) {
+      },
+
+    onActivateNarrationFunction:
+      function onActivateNarration({ index, progress, element, trigger, direction, graphContainerId, graphId, sectionConfig }) {
+      },
+
+    onResizeFunction:
+      function onResize({ graphElement, graphId, graphContainerId, sectionConfig }) {
+        sectionConfig.graph.resize(graphElement.offsetWidth, graphElement.offsetHeight);
+      },
+  };
+
+export class AppScrollyTeller {
   constructor() {
     /** ScrollyTeller */
     const storyConfiguration = {
       /** The id of the <div> that will contain all of the page content */
-      appContainerId: 'root',
+      appContainerId: 'app',
       /** build an array of story sections
        * Each section object should be a valid ScrollyTeller section configuration */
       sectionList: [
-        intro
+        myExampleSection0,
       ],
       /** optional function to receive the current sectionIdentifier,
        * narrationIndex, narrationId, and narrationClass
        * when narration blocks are entered */
-      onNarrationChangedFunction: ({
+      onNarrationChangedFunction: function ({
         sectionIdentifier,
         narrationIndex,
         narrationId,
         narrationClass,
-      }) => {
-        console.log('in ', sectionIdentifier, narrationId)
-      },
+      }) { console.log('in ', sectionIdentifier, narrationIndex); },
+      /** optional parameter to scale scroll elements on mobile devices
+          to create slower scrolling */
+      mobileScrollHeightMultiplier: 1.5,
     };
 
     /** create the ScrollyTeller object to validate the config */
@@ -112,4 +142,4 @@ class AppScrollyTeller {
   }
 }
 
-export default App;
+

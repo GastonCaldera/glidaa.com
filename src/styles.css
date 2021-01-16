@@ -1,0 +1,14 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background: #fff;
+  height: 97vh;
+}
+
+.demo--step {
+  height: 100vh;
+}
+
+.demo--step h1 {
+  text-align: center;
+}

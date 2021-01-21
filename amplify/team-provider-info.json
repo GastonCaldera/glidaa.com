@@ -33,12 +33,7 @@
             "function": {
                 "apilambda": {}
             },
-            "hosting": {
-                "amplifyhosting": {
-                    "appId": "d7ytxzg7m2esh",
-                    "type": "cicd"
-                }
-            }
+            "hosting": {}
         }
     }
 }

@@ -16,7 +16,10 @@ const awsmobile = {
             "endpoint": "https://7s27p8vjkh.execute-api.us-east-1.amazonaws.com/live",
             "region": "us-east-1"
         }
-    ]
+    ],
+    "aws_content_delivery_bucket": "glidaaamplify-20210122091829-hostingbucket-live",
+    "aws_content_delivery_bucket_region": "us-east-1",
+    "aws_content_delivery_url": "https://d3lyyi9bcq31or.cloudfront.net"
 };
 
 

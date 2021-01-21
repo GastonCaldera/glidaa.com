@@ -20,7 +20,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-glidaaamplify-live-144953-deployment/amplify-cfn-templates/storage/UserVisits-cloudformation-template.json",
         "logicalId": "storageUserVisits"
       },
-      "lastPushTimeStamp": "2021-01-21T20:44:55.991Z",
+      "lastPushTimeStamp": "2021-01-21T23:11:08.108Z",
       "output": {
         "PartitionKeyName": "time",
         "SortKeyName": "email",
@@ -60,7 +60,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-glidaaamplify-live-144953-deployment/amplify-cfn-templates/function/apilambda-cloudformation-template.json",
         "logicalId": "functionapilambda"
       },
-      "lastPushTimeStamp": "2021-01-21T20:44:56.016Z",
+      "lastPushTimeStamp": "2021-01-21T23:11:08.113Z",
       "output": {
         "Region": "us-east-1",
         "Arn": "arn:aws:lambda:us-east-1:476202956165:function:apilambda-live",
@@ -88,7 +88,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-glidaaamplify-live-144953-deployment/amplify-cfn-templates/api/api2899b73b-cloudformation-template.json",
         "logicalId": "apiapi2899b73b"
       },
-      "lastPushTimeStamp": "2021-01-21T20:44:55.997Z",
+      "lastPushTimeStamp": "2021-01-21T23:11:08.116Z",
       "output": {
         "ApiName": "api2899b73b",
         "RootUrl": "https://7s27p8vjkh.execute-api.us-east-1.amazonaws.com/live",
@@ -102,6 +102,26 @@
       "service": "amplifyhosting",
       "type": "cicd",
       "lastPushTimeStamp": "2021-01-21T04:29:25.197Z"
+    },
+    "S3AndCloudFront": {
+      "service": "S3AndCloudFront",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-glidaaamplify-live-144953-deployment/amplify-cfn-templates/hosting/template.json",
+        "logicalId": "hostingS3AndCloudFront"
+      },
+      "lastPushTimeStamp": "2021-01-21T23:11:08.117Z",
+      "output": {
+        "CloudFrontSecureURL": "https://d3lyyi9bcq31or.cloudfront.net",
+        "S3BucketSecureURL": "https://glidaaamplify-20210122091829-hostingbucket-live.s3.amazonaws.com",
+        "CloudFrontOriginAccessIdentity": "E287HTUGIVCMKN",
+        "WebsiteURL": "http://glidaaamplify-20210122091829-hostingbucket-live.s3-website-us-east-1.amazonaws.com",
+        "CloudFrontDistributionID": "E1U3BGTF3DM5GL",
+        "Region": "us-east-1",
+        "HostingBucketName": "glidaaamplify-20210122091829-hostingbucket-live",
+        "CloudFrontDomainName": "d3lyyi9bcq31or.cloudfront.net"
+      },
+      "lastPushDirHash": "VVSys5yidg4Wld9B4KfyakhMD5Q="
     }
   }
 }

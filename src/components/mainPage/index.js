@@ -98,7 +98,7 @@ const Map = (props) => {
 
 export default function Index() {
   const { email } = useParams();
-
+  console.log(email);
   useEffect(() => {
     const formSend = async () => {
       if (!email) return;
@@ -122,13 +122,16 @@ export default function Index() {
         </script>
       </Helmet>
 
-      <StoreyTeller />
 
       <div className="App">
         <Canvas gl camera={{ position: [0, 500, 1000], far: 10000 }}>
           <Map />
         </Canvas>
       </div>
+
+      <StoreyTeller />
+
+    
     </>
   );
 }

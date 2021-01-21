@@ -59,8 +59,8 @@ app.get(path, function (req, res) {
   var params = {
     Destination: {
       BccAddresses: [],
-      CcAddresses: ['manage2@glidaa.com'], // A secondary email address to receive the notification
-      ToAddresses: ['manager@glidaa.com'], // A primary email address to receive the notification
+      CcAddresses: ['michael@glidaa.com'], // A secondary email address to receive the notification
+      ToAddresses: ['sophie@glidaa.com'], // A primary email address to receive the notification
     },
     Message: {
       Body: {
@@ -82,7 +82,7 @@ app.get(path, function (req, res) {
       },
     },
     // This is the email you have authorized in AWS SES
-    Source: 'authorized@email.com',
+    Source: 'michael@texale.com',
   };
 
   ses.sendEmail(params, function (err, data) {

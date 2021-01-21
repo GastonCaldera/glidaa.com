@@ -20,7 +20,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-glidaaamplify-live-144953-deployment/amplify-cfn-templates/storage/UserVisits-cloudformation-template.json",
         "logicalId": "storageUserVisits"
       },
-      "lastPushTimeStamp": "2021-01-21T04:34:32.694Z",
+      "lastPushTimeStamp": "2021-01-21T20:31:56.168Z",
       "output": {
         "PartitionKeyName": "time",
         "SortKeyName": "email",
@@ -53,21 +53,21 @@
           }
         }
       ],
-      "lastBuildTimeStamp": "2021-01-21T04:32:53.949Z",
-      "lastPackageTimeStamp": "2021-01-21T04:32:56.353Z",
-      "distZipFilename": "apilambda-6f305472765259644553-build.zip",
+      "lastBuildTimeStamp": "2021-01-21T20:30:27.509Z",
+      "lastPackageTimeStamp": "2021-01-21T20:30:30.765Z",
+      "distZipFilename": "apilambda-6b5663512b715375436a-build.zip",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-glidaaamplify-live-144953-deployment/amplify-cfn-templates/function/apilambda-cloudformation-template.json",
         "logicalId": "functionapilambda"
       },
-      "lastPushTimeStamp": "2021-01-21T04:34:32.716Z",
+      "lastPushTimeStamp": "2021-01-21T20:31:56.176Z",
       "output": {
         "Region": "us-east-1",
         "Arn": "arn:aws:lambda:us-east-1:476202956165:function:apilambda-live",
         "Name": "apilambda-live",
         "LambdaExecutionRole": "glidaaamplifyLambdaRole39306f04-live"
       },
-      "lastPushDirHash": "25KL0Qi7fdu58EsCLwJFzO0tW+k="
+      "lastPushDirHash": "HRq2KzQWgAKavWfqmQOhRnuyUY4="
     }
   },
   "api": {
@@ -88,7 +88,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-glidaaamplify-live-144953-deployment/amplify-cfn-templates/api/api2899b73b-cloudformation-template.json",
         "logicalId": "apiapi2899b73b"
       },
-      "lastPushTimeStamp": "2021-01-21T04:34:32.701Z",
+      "lastPushTimeStamp": "2021-01-21T20:31:56.173Z",
       "output": {
         "ApiName": "api2899b73b",
         "RootUrl": "https://7s27p8vjkh.execute-api.us-east-1.amazonaws.com/live",

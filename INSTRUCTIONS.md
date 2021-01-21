@@ -1,7 +1,7 @@
 # Instructions
 
-First you need to download and configure Amplify CLI. Go to the root project folder and type these commands, following
-the instructions:
+First you need to download and configure Amplify CLI (if you haven't already). Go to the root project folder and type
+these commands, following the instructions:
 
 ```bash
 npm install -g @aws-amplify/cli
@@ -10,17 +10,20 @@ amplify configure
 
 ## Backend
 
-Then you set up a new environment and push the changes so the resources are created.
+Then you set up the project by creating a new folder, changing to this directory and performing this command:
 
 ```bash
 amplify env add
 amplify push
+or take from original:
+amplify init --app https://github.com/andrestone/glidaa-amplify.git
 ```
 
-The last command will output the API endpoint, which is the main part of the link the clients will use.
+This command will output the API endpoint, but it'll also start your react development server. Type CTRL-C to stop the
+development server in order to copy the API endpoint, you'll need it later.
 
-This finishes the backend. Whenever changes are made to the backend code (the lambda function, for example), the changes
-are deployed by running `amplify push`.
+And this finishes the backend. Whenever changes are made to the backend code (the lambda function, for example), the
+changes are deployed by running `amplify push`.
 
 ## Frontend
 
@@ -46,8 +49,11 @@ You have to select "Hosting with Amplify Console (Managed hosting with custom do
 
 - Click "Save and deploy".
 
-This finishes the backend. Whenever changes are commited to the selected branch, a new deployment will be triggered and
-the website will be update.
+Go back to the terminal and press enter. Amplify will output the url of your website, that can be later customized in
+the Amplify console.
+
+This finishes the frontend. Whenever changes are commited to the selected branch, a new deployment will be triggered and
+the website will be updated.
 
 ## Customizing and Testing
 
@@ -91,18 +97,25 @@ var params = {
 };
 ```
 
-You also should replace the redirect website to your actual website, when it's ready:
-
-`amplify/backend/function/apilambda/src/app.js`
-
-```js
-res.redirect('https://google.com'); // <= replace with your website
-```
-
 After editing this file, you go to your project root folder and do `amplify push` to update the lambda function.
 
-Then you can test it by constructing your links appending `?email=client@company.com` to the endpoint you got on the
-first step.
+You also need to replace the placeholder endpoint in this file:
+
+`src/components/mainPage/index.js`
+
+```js
+const formSend = async () => {
+  if (!email) return;
+  await fetch(`https://put.the-endpoint.here/visit?email=${email}`, {
+    mode: 'no-cors',
+  });
+};
+```
+
+After editing this file, you have to push the changes to github in order to update the hosted frontend.
+
+Then you can test it by constructing your links appending the email of the client to your website url:
+[](https://yourhostedurl.com/client@company.com).
 
 If you followed these instructions, you should see a DynamoDB table with the record of this visit in your DynamoDB
 console. You should also receive an email with the notification.

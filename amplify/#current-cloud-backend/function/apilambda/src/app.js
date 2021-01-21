@@ -50,7 +50,7 @@ app.get(path, function (req, res) {
       res.statusCode = 500;
       res.json({ error: err, url: req.url, body: req.body });
     } else {
-      res.redirect('https://glidaa.com'); // <= replace with your website
+      // console.log('New user visit recorded.')
     }
   });
 
@@ -59,8 +59,8 @@ app.get(path, function (req, res) {
   var params = {
     Destination: {
       BccAddresses: [],
-      CcAddresses: ['sophie@glidaa.com'], // A secondary email address to receive the notification
-      ToAddresses: ['michael@glidaa.com'], // A primary email address to receive the notification
+      CcAddresses: ['manage2@glidaa.com'], // A secondary email address to receive the notification
+      ToAddresses: ['manager@glidaa.com'], // A primary email address to receive the notification
     },
     Message: {
       Body: {
@@ -82,7 +82,7 @@ app.get(path, function (req, res) {
       },
     },
     // This is the email you have authorized in AWS SES
-    Source: 'michael@glidaa.com',
+    Source: 'authorized@email.com',
   };
 
   ses.sendEmail(params, function (err, data) {

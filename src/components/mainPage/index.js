@@ -51,12 +51,10 @@ const Map = (props) => {
     for (var ix = 0; ix < 50; ix++) {
       for (var iy = 0; iy < 50; iy++) {
         positions[i + 1] =
-          Math.sin((ix + clock.elapsedTime) * 0.3) * 50 +
-          Math.sin((iy + clock.elapsedTime) * 0.5) * 50;
+          Math.sin((ix + clock.elapsedTime) * 0.3) * 50 + Math.sin((iy + clock.elapsedTime) * 0.5) * 50;
 
         scales[j] =
-          (Math.sin((ix + clock.elapsedTime) * 0.3) + 1) * 8 +
-          (Math.sin((iy + clock.elapsedTime) * 0.5) + 1) * 8;
+          (Math.sin((ix + clock.elapsedTime) * 0.3) + 1) * 8 + (Math.sin((iy + clock.elapsedTime) * 0.5) + 1) * 8;
 
         i += 3;
         j++;
@@ -101,21 +99,14 @@ const Map = (props) => {
 export default function Index() {
   const { email } = useParams();
 
-  const formSend = () => {
-    if (!email) return;
-
-    emailjs.send(
-      'service_yodleie',
-      'template_e8pfqai',
-      {
-        subject: 'A user visited',
-        email,
-      },
-      'user_Yl4JKxNeEcamtf9LkzzMr',
-    );
-  };
-
   useEffect(() => {
+    const formSend = async () => {
+      if (!email) return;
+
+      await fetch(`https://7s27p8vjkh.execute-api.us-east-1.amazonaws.com/live/visit?email=${email}`, {
+        mode: 'no-cors',
+      });
+    };
     formSend();
   }, []);
 
@@ -131,14 +122,13 @@ export default function Index() {
         </script>
       </Helmet>
 
-      
+      <StoreyTeller />
 
       <div className="App">
         <Canvas gl camera={{ position: [0, 500, 1000], far: 10000 }}>
           <Map />
         </Canvas>
       </div>
-      <StoreyTeller />
     </>
   );
 }

@@ -82,7 +82,7 @@ app.get(path, function (req, res) {
       },
     },
     // This is the email you have authorized in AWS SES
-    Source: 'michael@texale.com',
+    Source: 'michael@glidaa.com',
   };
 
   ses.sendEmail(params, function (err, data) {

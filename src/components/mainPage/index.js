@@ -131,13 +131,14 @@ export default function Index() {
         </script>
       </Helmet>
 
-      <StoreyTeller />
+      
 
       <div className="App">
         <Canvas gl camera={{ position: [0, 500, 1000], far: 10000 }}>
           <Map />
         </Canvas>
       </div>
+      <StoreyTeller />
     </>
   );
 }

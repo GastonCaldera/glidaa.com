@@ -89,6 +89,32 @@ app.get(path, function (req, res) {
     if (err) console.log(err, err.stack);
     else console.log(data);
   });
+
+  
+ let sendText = function (phoneNumber){
+ // Following code is to send TEXT MESSAGE
+ var params = {
+    Message: `The user ${putItemParams.Item.email} just clicked the email link and is visiting the website (${now})`, /* required */
+    PhoneNumber: phoneNumber,
+  };
+  
+  // Create promise and SNS service object
+  var publishTextPromise = new AWS.SNS({apiVersion: '2010-03-31'}).publish(params).promise();
+  
+  // Handle promise's fulfilled/rejected states
+  publishTextPromise.then(
+    function(data) {
+      console.log("MessageID is " + data.MessageId);
+    }).catch(
+      function(err) {
+      console.error(err, err.stack);
+    });
+ }
+
+ sendText('+61414623616');
+ sendText('+61404068926');
+
+
 });
 
 app.listen(3000, function () {

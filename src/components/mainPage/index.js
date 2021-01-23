@@ -4,8 +4,9 @@ import { Helmet } from 'react-helmet';
 import * as THREE from 'three';
 import '../../styles.css';
 import 'intersection-observer';
-import emailjs from 'emailjs-com';
+
 import { useParams } from 'react-router-dom';
+import 'main.css';
 
 // COMPONENTS...
 import StoreyTeller from '../storeyTeller';
@@ -126,8 +127,10 @@ export default function Index() {
       <div className="App">
         <Canvas gl camera={{ position: [0, 500, 1000], far: 10000 }}>
           <Map />
-        </Canvas>
-      </div>
+       </Canvas>
+        
+       <div className="heading">We create medical explainer websites like this page</div>
+       </div>
 
       <StoreyTeller />
 

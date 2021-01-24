@@ -6,7 +6,7 @@ import '../../styles.css';
 import 'intersection-observer';
 
 import { useParams } from 'react-router-dom';
-import 'main.css';
+import './main.css';
 
 // COMPONENTS...
 import StoreyTeller from '../storeyTeller';

@@ -4,13 +4,12 @@ import { Helmet } from 'react-helmet';
 import * as THREE from 'three';
 import '../../styles.css';
 import 'intersection-observer';
-import emailjs from 'emailjs-com';
 import { useParams } from 'react-router-dom';
 
 // COMPONENTS...
 import StoreyTeller from '../storeyTeller';
 
-const numParticles = 2500;
+const numParticles = 3000;
 
 const Map = (props) => {
   const nodes = useRef([]);
@@ -122,13 +121,14 @@ export default function Index() {
         </script>
       </Helmet>
 
-      <StoreyTeller />
+     
 
       <div className="App">
-        <Canvas gl camera={{ position: [0, 500, 1000], far: 10000 }}>
+        <Canvas gl camera={{ position: [0, 300, 1000], far: 10000 }}>
           <Map />
         </Canvas>
       </div>
+      <StoreyTeller />
     </>
   );
 }

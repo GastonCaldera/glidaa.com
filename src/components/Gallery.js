@@ -2,22 +2,22 @@ import React from "react";
 import { render } from 'react-dom';
 import Gallery from 'react-grid-gallery';
 
-import image1 from "../Archive/buttonSML01.png";
-import image2 from "../Archive/buttonSML02.png";
-import image3 from "../Archive/buttonSML03.png";
-import image4 from "../Archive/buttonSML04.png";
-import image5 from "../Archive/buttonSML05.png";
-import image6 from "../Archive/buttonSML06.png";
-import image7 from "../Archive/buttonSML07.png";
-import image8 from "../Archive/buttonSML08.png";
-import porfolio01 from "../Archive/porfolio01.png";
-import porfolio02 from "../Archive/porfolio02.png";
-import porfolio03 from "../Archive/porfolio03.png";
-import porfolio04 from "../Archive/porfolio04.png";
-import porfolio05 from "../Archive/porfolio05.png";
-import porfolio06 from "../Archive/porfolio06.png";
-import porfolio07 from "../Archive/porfolio07.png";
-import porfolio08 from "../Archive/porfolio08.png";
+import image1 from "../assets/images/buttonSML01.png"; 
+import image2 from "../assets/images/buttonSML02.png";
+import image3 from "../assets/images/buttonSML03.png";
+import image4 from "../assets/images/buttonSML04.png";
+import image5 from "../assets/images/buttonSML05.png";
+import image6 from "../assets/images/buttonSML06.png";
+import image7 from "../assets/images/buttonSML07.png";
+import image8 from "../assets/images/buttonSML08.png";
+import porfolio01 from "../assets/images/porfolio01.png";
+import porfolio02 from "../assets/images/porfolio02.png";
+import porfolio03 from "../assets/images/porfolio03.png";
+import porfolio04 from "../assets/images/porfolio04.png";
+import porfolio05 from "../assets/images/porfolio05.png";
+import porfolio06 from "../assets/images/porfolio06.png";
+import porfolio07 from "../assets/images/porfolio07.png";
+import porfolio08 from "../assets/images/porfolio08.png";
 import "../Gallery.css";
 
 

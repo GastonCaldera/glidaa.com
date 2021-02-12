@@ -24,15 +24,15 @@ import WaterAnimation from "./WaterAnimation";
 import Chart from "./Chart";
 import D3Header from "./D3Header";
 
-import background from "../background.png"
+import background from "../assets/images/background.png"
 import load from "../assets/images/load.gif"
 
 // import button from "../button.svg";
 // import { TangentSpaceNormalMap } from "three";
 
 //** values ​​handled in percentages, example 25 = 25% ***********/
-const fadeIn = 10; // the lottie appears completely when this percentage is reached
-const fadeOut = 85; // the lottie starts to disappear when this percentage is reached
+const fadeIn = 0; // the lottie appears completely when this percentage is reached
+const fadeOut = 0; // the lottie starts to disappear when this percentage is reached
 
 /****************** */
 

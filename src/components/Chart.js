@@ -1,9 +1,9 @@
 import React from 'react';
 import injectSheet from "react-jss";
 import { Waypoint } from "react-waypoint";
-import nyc from "../chart-data/nyc.js"
-import sf from "../chart-data/sf.js"
-import am from "../chart-data/am.js"
+import nyc from "../assets/data/chart-data/nyc.js"
+import sf from "../assets/data/chart-data/sf.js"
+import am from "../assets/data/chart-data/am.js"
 import BarChart from "./BarChart.js"
 import { Geometry } from 'three';
 

@@ -31,8 +31,8 @@ import load from "../assets/images/load.gif"
 // import { TangentSpaceNormalMap } from "three";
 
 //** values ​​handled in percentages, example 25 = 25% ***********/
-const fadeIn = 0; // the lottie appears completely when this percentage is reached
-const fadeOut = 0; // the lottie starts to disappear when this percentage is reached
+const fadeIn = 15; // the lottie appears completely when this percentage is reached
+const fadeOut = 85; // the lottie starts to disappear when this percentage is reached
 
 /****************** */
 
@@ -114,7 +114,7 @@ function Scrollyteller() {
         console.log(JSON.stringify(auxItems));
         setTimeout(() => {
           setLoading(false);
-        }, 3000);
+        }, 30);
       })
       .catch((err) => {
         setLoading(false);
@@ -246,7 +246,7 @@ function Scrollyteller() {
     <div >
       {isOverlay && <div className="overlay">
         <img src={background} alt="background" style={{ position: 'fixed', 'top': "0", left: '0', "width": "100vw", height: "100vh", zIndex: '9999999' }}></img>
-        <div className="progressBar-container"> <img src={load} alt="loading" className="loading"></img>
+        <div className="progressBar-container"> <div  alt="loading" className="loading"></div>
         </div>
       </div>}
       <img src={background} alt="background" style={{ position: 'fixed', 'top': "0", left: '0', "width": "100vw", height: "100vh", zIndex: '-1' }}></img>

@@ -28,7 +28,7 @@ const IMAGES =
     thumbnailWidth: 170,
     thumbnailHeight: 130,
     // isSelected: true,
-    // caption: "After Rain (Jeshu John - designerspics.com)"
+     caption: "Abbott Diagnostics"
   },
   {
     src: porfolio02,
@@ -36,38 +36,44 @@ const IMAGES =
     thumbnailWidth: 170,
     thumbnailHeight: 130,
     // tags: [{ value: "Ocean", title: "Ocean" }, { value: "People", title: "People" }],
-    // caption: "Boats (Jeshu John - designerspics.com)"
+    caption: "NSW Government Transport Department"
   }, {
     src: porfolio03,
     thumbnail: image3,
     thumbnailWidth: 170,
-    thumbnailHeight: 130
+    thumbnailHeight: 130,
+    caption: "Skycoin"
   }, {
     src: porfolio04,
     thumbnail: image4,
     thumbnailWidth: 170,
-    thumbnailHeight: 130
+    thumbnailHeight: 130,
+    caption: "Reuters"
   }, {
     src: porfolio05,
     thumbnail: image5,
     thumbnailWidth: 170,
-    thumbnailHeight: 130
+    thumbnailHeight: 130,
+    caption: "News Ltd"
   }, {
     src: porfolio06,
     thumbnail: image6,
     thumbnailWidth: 170,
-    thumbnailHeight: 130
+    thumbnailHeight: 130,
+    caption: "Governemnet Insurance Regulator"
   }, {
     src: porfolio07,
     thumbnail: image7,
     thumbnailWidth: 170,
-    thumbnailHeight: 130
+    thumbnailHeight: 130,
+    caption: "Pharmacy Guild of Australia"
   },
   {
     src: porfolio08,
     thumbnail: image8,
     thumbnailWidth: 170,
-    thumbnailHeight: 130
+    thumbnailHeight: 130,
+    caption: "Woolworths Supermarkets"
   }]
 
 const MyGallery = ({ isOpen, lightboxWillClose }) => {

@@ -1,22 +1,16 @@
 /** @jsx jsx */
-import { useEffect, useState, useCallback, useRef } from "react";
-import { css, jsx } from "@emotion/core";
+import { useEffect, useState, useCallback} from "react";
+import {  jsx } from "@emotion/core";
 import { Card } from "react-bootstrap";
 import { Scrollama, Step } from "react-scrollama";
 import { narrativeStyle } from "../helper/constants"
 
-// import Lottie from 'react-lottie';
-import Tabletop from "tabletop";
 import scrollama from "scrollama";
-// import Lottie from 'lottie-react-web';
-// import "@lottiefiles/lottie-player";
 
 import { create } from "@lottiefiles/lottie-interactivity";
-// import { Lottie } from './components/Lottie';
 
 import VideoBackground from "./VideoBackground";
 
-// import ScrollAnimation from "./ScrollAnimation";
 import MyGallery from "./Gallery";
 import FlockAnimation from "./FlockAnimation";
 import WaterAnimation from "./WaterAnimation";

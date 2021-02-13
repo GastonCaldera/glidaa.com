@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { css, jsx } from "@emotion/core";
 import { Card } from "react-bootstrap";
 import { Scrollama, Step } from "react-scrollama";
@@ -10,7 +10,7 @@ import Tabletop from "tabletop";
 import scrollama from "scrollama";
 // import Lottie from 'lottie-react-web';
 // import "@lottiefiles/lottie-player";
-import "@lottiefiles/lottie-player";
+
 import { create } from "@lottiefiles/lottie-interactivity";
 // import { Lottie } from './components/Lottie';
 
@@ -23,9 +23,12 @@ import WaterAnimation from "./WaterAnimation";
 
 import Chart from "./Chart";
 import D3Header from "./D3Header";
+import LottiePlayer from "./LottiePlayer"
 
 import background from "../assets/images/background.png"
 import load from "../assets/images/load.gif"
+
+import itemsJSON from "../assets/data/items.json"
 
 // import button from "../button.svg";
 // import { TangentSpaceNormalMap } from "three";
@@ -40,26 +43,19 @@ const fadeOut = 85; // the lottie starts to disappear when this percentage is re
 
 const narration = require("../assets/data/narration.json");
 
-// const introBlurb = (
-//   <div>
-//     <br></br>
-//     <p>
-//       You can intro your story here, or delete this by deleting the "introBlurb"
-//       constant from being defined and from being rendered. This text export from
-//       goole sheet
-//     </p>
-//     <br></br>
-//   </div>
-// );
+
 
 function Scrollyteller() {
+  
   const [data, setData] = useState("1");
   const [progress, setProgress] = useState(0);
-  // const [src, setSrc] = useState("");
-  const [items, setItems] = useState([]);
+  // const progress = useRef(0)
+
   const [isOpen, setIsGalleryOpen] = useState(false);
   const [isOverlay, setOverlay] = useState(true);
 
+  const [items, setItems] = useState(itemsJSON);
+  console.log(items);
   function reloadScrollBars() {
     document.documentElement.style.overflow = 'auto';  // firefox, chrome
     document.body.scroll = "yes"; // ie only
@@ -86,41 +82,41 @@ function Scrollyteller() {
 
   let lotties = items ? [...items].filter((e) => e[0].frames != "") : null;
   // console.log(lotties);
-  useEffect(() => {
-    setLoading(true);
-    Tabletop.init({
-      key:
-        "https://docs.google.com/spreadsheets/d/1RfjhL5U0DvF1P6FtedRA4JuODHe0d1s8XbGgNKHmfdM/edit#gid=0",
-      simpleSheet: false,
-    })
-      .then((items) => {
-        let auxItems = [];
-        let value = "1";
+  // useEffect(() => {
+  //   // setLoading(true);
+  //   // Tabletop.init({
+  //   //   key:
+  //   //     "https://docs.google.com/spreadsheets/d/1RfjhL5U0DvF1P6FtedRA4JuODHe0d1s8XbGgNKHmfdM/edit#gid=0",
+  //   //   simpleSheet: false,
+  //   // })
+  //   //   .then((items) => {
+  //   //     let auxItems = [];
+  //   //     let value = "1";
 
-        for (let i = 0; i < items["Sheet2"].elements.length; i++) {
-          let auxArray = items["Sheet2"].elements.filter(
-            (e) => e.slide === value
-          );
+  //   //     for (let i = 0; i < items["Sheet2"].elements.length; i++) {
+  //   //       let auxArray = items["Sheet2"].elements.filter(
+  //   //         (e) => e.slide === value
+  //   //       );
 
-          i += auxArray.length;
-          i--;
+  //   //       i += auxArray.length;
+  //   //       i--;
 
-          value = items["Sheet2"].elements[i + 1]?.slide;
+  //   //       value = items["Sheet2"].elements[i + 1]?.slide;
 
-          auxItems.push(auxArray);
-        }
+  //   //       auxItems.push(auxArray);
+  //   //     }
 
-        setItems(auxItems);
-        console.log(JSON.stringify(auxItems));
-        setTimeout(() => {
-          setLoading(false);
-        }, 30);
-      })
-      .catch((err) => {
-        setLoading(false);
-        console.warn(err)
-      });
-  }, []);
+  //   //     setItems(auxItems);
+  //   //     console.log(JSON.stringify(auxItems));
+  //   //     setTimeout(() => {
+  //   //       setLoading(false);
+  //   //     }, 30);
+  //   //   })
+  //   //   .catch((err) => {
+  //   //     setLoading(false);
+  //   //     console.warn(err)
+  //   //   });
+  // }, []);
 
   useEffect(() => {
     // instantiate the scrollama
@@ -186,7 +182,7 @@ function Scrollyteller() {
         }
       }
     }
-  }, [progress, data, items.length, isOpen]);
+  }, [data, progress]);
 
   useEffect(() => {
 
@@ -207,7 +203,7 @@ function Scrollyteller() {
         });
       });
     });
-  }, [items, progress]);
+  }, []);
 
   const onStepEnter = ({ data }) => {
     // console.log("------------------");
@@ -218,17 +214,20 @@ function Scrollyteller() {
     // document.querySelector('.content').style.display = data >= 8 ? 'block' : 'none';
     setData(data);
     setProgress(0);
+    // progress.current = 0;
   };
 
   const onStepExit = ({ element }) => {
     // console.log(element)
     setProgress(0);
+    // progress.current = 0;
     // element.style.backgroundColor = "#fff";
   };
 
   const onStepProgress = ({ element, progress }) => {
     // console.log(element)
     // console.log(progress)
+    // progress.current = ActProgress;
     setProgress(progress);
     // this.setState({ progress });
   };
@@ -244,11 +243,11 @@ function Scrollyteller() {
 
   return (
     <div >
-      {isOverlay && <div className="overlay">
+      {/* {isOverlay && <div className="overlay">
         <img src={background} alt="background" style={{ position: 'fixed', 'top': "0", left: '0', "width": "100vw", height: "100vh", zIndex: '9999999' }}></img>
         <div className="progressBar-container"> <div  alt="loading" className="loading"></div>
         </div>
-      </div>}
+      </div>} */}
       <img src={background} alt="background" style={{ position: 'fixed', 'top': "0", left: '0', "width": "100vw", height: "100vh", zIndex: '-1' }}></img>
       <div css={narrativeStyle}>
         {items.length > 0 ? (
@@ -318,12 +317,12 @@ function Scrollyteller() {
                 } else if (left[0].slideType === "2d") {
                   return (
                     <div className="left-side" key={i}>
-                      <lottie-player
+                      <LottiePlayer
                         id={`lottie${i + 1}`}
                         mode="seek"
                         src={left[0].data}
                         key={i}
-                      ></lottie-player>
+                      />
                     </div>
                   );
                 } else if (left[0].slideType === "3d") {

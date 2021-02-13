@@ -3,7 +3,7 @@ import React from "react";
 
 import "../VideoBackground.css"
 
-const VideoBackground = ({src}) => {
+const VideoBackground = React.memo(({src}) => {
   return (
     <div style={{position:'absolute', top:'0', width:'98.8vw'}}>
     <picture>
@@ -13,6 +13,6 @@ const VideoBackground = ({src}) => {
     </picture>
     </div>
   );
-};
+})
 
 export default VideoBackground;

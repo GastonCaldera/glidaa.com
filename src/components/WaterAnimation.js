@@ -86,7 +86,7 @@ function Dolly() {
   return null
 }
 
-function WaterAnimation() {
+const  WaterAnimation = React.memo(() =>  {
   return (
       <div style={{height:'100vh', position:'absolute', top:'0', width:'98.8vw'}}>
         <Canvas style={{ background: "white" }} camera={{ fov: 75, position: [0, 0, 70] }} >
@@ -102,6 +102,6 @@ function WaterAnimation() {
 
       </div>
   )
-}
+})
 
 export default WaterAnimation;

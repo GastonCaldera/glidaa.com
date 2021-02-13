@@ -36,6 +36,8 @@ img {
     text-align: center;
     padding: 10%;   
     width: 100%;
+    min-height: 100vh;
+    height: max-content;
 }
 .card {
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);

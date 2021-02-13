@@ -4,7 +4,7 @@ import ScrollAnimation from "./ScrollAnimation"
 
 
 
-const D3Header = ({ texts }) => {
+const D3Header = React.memo(({ texts }) => {
   return (
     <>
       <div className="particles__container" style={{ position: "relative" }}>
@@ -56,6 +56,6 @@ const D3Header = ({ texts }) => {
       </div>
     </>
   );
-};
+});
 
 export default D3Header;

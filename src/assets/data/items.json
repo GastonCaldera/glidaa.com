@@ -1,0 +1,325 @@
+[
+    [
+        {
+            "slide": "1",
+            "card": "1",
+            "slideType": "3d",
+            "description": "Webpages that explain medical concepts in a fluid way.",
+            "descriptionType": "top",
+            "data": "dots",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "1",
+            "card": "2",
+            "slideType": "3d",
+            "description": "We deliver interactive explainer pages with tracking and remote control.",
+            "descriptionType": "middle",
+            "data": "dots",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "1",
+            "card": "3",
+            "slideType": "3d",
+            "description": "The animations, videos, graphs and text boxes respond to the user’s scroll.",
+            "descriptionType": "bottom",
+            "data": "dots",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        }
+    ],
+    [
+        {
+            "slide": "2",
+            "card": "1",
+            "slideType": "2d",
+            "description": "The world has changed. We face zoom fatigue, empty online conferences, unread pdf and PowerPoint presenations, and unattended webinars.",
+            "descriptionType": "",
+            "data": "https://assets5.lottiefiles.com/packages/lf20_edmnkpi3.json",
+            "frames": "448",
+            "graphChange": "",
+            "static": ""
+        }
+    ],
+    [
+        {
+            "slide": "3",
+            "card": "1",
+            "slideType": "graph",
+            "description": "This webpage demonstrates the medium by which we explain complex medical and diagnostic solutions.",
+            "descriptionType": "card",
+            "data": "/chartdata/nyc.js",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "3",
+            "card": "2",
+            "slideType": "graph",
+            "description": "As you can see from the graph mobile usage has dramatically increased through the pandemic.",
+            "descriptionType": "card",
+            "data": "/chartdata/sf.js",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "3",
+            "card": "3",
+            "slideType": "graph",
+            "description": "People want a self-paced, dynamic, mobile-friendly learning experience. \r",
+            "descriptionType": "card",
+            "data": "/chartdata/am.js",
+            "frames": "",
+            "graphChange": "",
+            "static": "TRUE"
+        }
+    ],
+    [
+        {
+            "slide": "4",
+            "card": "1",
+            "slideType": "video",
+            "description": "People expect more than static text in a PDF, multimedia is the new normal when presenting.",
+            "descriptionType": "card",
+            "data": "man",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        }
+    ],
+    [
+        {
+            "slide": "5",
+            "card": "1",
+            "slideType": "2d",
+            "description": "Imagine your client is at home on a mobile phone. ",
+            "descriptionType": "card",
+            "data": "https://assets9.lottiefiles.com/packages/lf20_jfmjd0wo.json",
+            "frames": "754",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "5",
+            "card": "2",
+            "slideType": "2d",
+            "description": "They click on your email updating them on your product.",
+            "descriptionType": "card",
+            "data": "",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "5",
+            "card": "3",
+            "slideType": "2d",
+            "description": "You are notified via text and email when they interact with your presenation.",
+            "descriptionType": "card",
+            "data": "",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "5",
+            "card": "4",
+            "slideType": "2d",
+            "description": "You may control their page remotely as you call or chat to talk them through the product.",
+            "descriptionType": "card",
+            "data": "",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        }
+    ],
+    [
+        {
+            "slide": "6",
+            "card": "1",
+            "slideType": "2d",
+            "description": "Different media formats provide opportunities to engage your audience to suit your story",
+            "descriptionType": "card",
+            "data": "https://assets6.lottiefiles.com/private_files/lf30_izlxd1pm.json",
+            "frames": "450",
+            "graphChange": "",
+            "static": ""
+        }
+    ],
+    [
+        {
+            "slide": "7",
+            "card": "1",
+            "slideType": "2d",
+            "description": "2d animations are brilliant for understanding instructions for use.",
+            "descriptionType": "card",
+            "data": "https://assets2.lottiefiles.com/packages/lf20_sgnjqx5l.json",
+            "frames": "510",
+            "graphChange": "",
+            "static": ""
+        }
+    ],
+    [
+        {
+            "slide": "8",
+            "card": "1",
+            "slideType": "video",
+            "description": "The data on your product needs to be searchable and animated.",
+            "descriptionType": "card",
+            "data": "sira",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "8",
+            "card": "2",
+            "slideType": "video",
+            "description": "We can add filters, search and controls that link to the cards",
+            "descriptionType": "card",
+            "data": "",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        }
+    ],
+    [
+        {
+            "slide": "9",
+            "card": "1",
+            "slideType": "video",
+            "description": "Videos need to be short gifs that play continuously to maintain attention.  \r",
+            "descriptionType": "card",
+            "data": "medical",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "9",
+            "card": "2",
+            "slideType": "video",
+            "description": "These can be shot videos, 3d animations, or 2d simulations.",
+            "descriptionType": "card",
+            "data": "",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        }
+    ],
+    [
+        {
+            "slide": "10",
+            "card": "1",
+            "slideType": "video",
+            "description": "We have delivered hundreds of animations and explainer pages.",
+            "descriptionType": "card",
+            "data": "logos",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "10",
+            "card": "2",
+            "slideType": "video",
+            "description": "This is for clients including Abbot Diagnostics, Pfizer, Eli Lily, Wetest and Government.",
+            "descriptionType": "card",
+            "data": "",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        }
+    ],
+    [
+        {
+            "slide": "11",
+            "card": "1",
+            "slideType": "porfolio",
+            "description": "Our work includes \r",
+            "descriptionType": "card",
+            "data": "",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        }
+    ],
+    [
+        {
+            "slide": "12",
+            "card": "1",
+            "slideType": "2d",
+            "description": "We kick off all projects with an inital discovery workshop. \r",
+            "descriptionType": "card",
+            "data": "https://assets6.lottiefiles.com/packages/lf20_0zjrqweq.json",
+            "frames": "737",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "12",
+            "card": "2",
+            "slideType": "2d",
+            "description": "This meeting should include sales, marketing  and any relevevant stakeholders.",
+            "descriptionType": "card",
+            "data": "",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "12",
+            "card": "3",
+            "slideType": "2d",
+            "description": "We mock up a rough user journey of the page.",
+            "descriptionType": "card",
+            "data": "",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "12",
+            "card": "4",
+            "slideType": "2d",
+            "description": "We deliver a budget and timeline which can be modified based on adding and removing panels.",
+            "descriptionType": "card",
+            "data": "",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        },
+        {
+            "slide": "12",
+            "card": "5",
+            "slideType": "2d",
+            "description": "We end up with a proposal, a quote and a timeline. ",
+            "descriptionType": "card",
+            "data": "",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        }
+    ],
+    [
+        {
+            "slide": "13",
+            "card": "2",
+            "slideType": "3d",
+            "description": "Book a time",
+            "descriptionType": "button",
+            "data": "fish",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        }
+    ]
+]

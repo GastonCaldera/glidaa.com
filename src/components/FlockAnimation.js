@@ -43,7 +43,7 @@ function Effect() {
   );
 }
 
-function FlockAnimation() {
+const FlockAnimation = React.memo(() =>  {
   const mouse = useRef([0, 0, false]);
 
   const onMouseMove = useCallback(
@@ -91,6 +91,6 @@ function FlockAnimation() {
       </Canvas>
     </div>
   );
-}
+})
 
 export default FlockAnimation;

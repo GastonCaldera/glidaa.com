@@ -137,7 +137,7 @@ function Dolly() {
     //y = (mouse.y * viewport.height) / 10
     camera.position.x = winScroll*2 ;
     camera.lookAt(0, 0, -1200);
-    console.log(winScroll)
+
     //camera.position.y = y
   });
   return null;

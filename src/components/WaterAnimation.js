@@ -71,10 +71,18 @@ function Swarm({ count }) {
   )
 }
 
+var x;
+var y;
+
 function Dolly() {
   // This one makes the camera move in and out
-  useFrame(({ clock, camera }) => {
+  useFrame(({ clock, camera, mouse, viewport }) => {
     camera.position.z = 50 + Math.sin(clock.getElapsedTime()) * 30
+    console.log(camera.position.x)
+    x = (mouse.x * viewport.width) / 10
+    y = (mouse.y * viewport.height) / 10
+    camera.position.x = x
+    camera.position.y = y
   })
   return null
 }
@@ -82,9 +90,9 @@ function Dolly() {
 function WaterAnimation() {
   return (
       <div style={{height:'100vh', position:'absolute', top:'0', width:'98.8vw'}}>
-        <Canvas camera={{ fov: 75, position: [0, 0, 70] }} >
-        <pointLight intensity={0.2} color="white" />
-        <spotLight intensity={0.2} position={[70, 70, 70]} penumbra={1} color="lightblue" />
+        <Canvas style={{ background: "white" }} camera={{ fov: 75, position: [0, 0, 70] }} >
+        <pointLight intensity={0.3} color="pink" />
+        <spotLight intensity={0.8} position={[70, 70, 70]} penumbra={1} color="red" />
         <Swarm count={20000} />
         <Effects>
             <waterPass attachArray="passes" factor={2} />

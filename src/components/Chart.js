@@ -33,7 +33,7 @@ const styles = {
   step:{
     height:"max-content",
     width:"100%",
-    backgroundColor:"white",
+
     marginBottom:"500px",
     fontSize:"25px",
     textAlign:"center",

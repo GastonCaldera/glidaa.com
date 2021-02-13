@@ -78,7 +78,6 @@ function Dolly() {
   // This one makes the camera move in and out
   useFrame(({ clock, camera, mouse, viewport }) => {
     camera.position.z = 50 + Math.sin(clock.getElapsedTime()) * 30
-    console.log(camera.position.x)
     x = (mouse.x * viewport.width) / 10
     y = (mouse.y * viewport.height) / 10
     camera.position.x = x
@@ -93,9 +92,9 @@ function WaterAnimation() {
         <Canvas style={{ background: "white" }} camera={{ fov: 75, position: [0, 0, 70] }} >
         <pointLight intensity={0.3} color="pink" />
         <spotLight intensity={0.8} position={[70, 70, 70]} penumbra={1} color="red" />
-        <Swarm count={20000} />
+        <Swarm count={15000} />
         <Effects>
-            <waterPass attachArray="passes" factor={2} />
+            <waterPass attachArray="passes" factor={4} />
             <unrealBloomPass attachArray="passes" args={[undefined, 1.5, 1, 0]} />
         </Effects>
         <Dolly />

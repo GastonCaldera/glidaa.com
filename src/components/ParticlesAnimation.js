@@ -7,6 +7,7 @@ import brain from "../brain-simple-mesh.glb";
 // import { PerspectiveCamera } from '@react-three/drei/PerspectiveCamera'
 import * as THREE from "three";
 import { OrbitControls, Stars } from "@react-three/drei";
+import { MOUSE } from "three";
 
 const numParticles = 2500;
 
@@ -122,15 +123,22 @@ const Map = (props) => {
   );
 };
 
-
+var x;
+var y;
 function Dolly() {
   
   // This one makes the camera move in and out
-  useFrame(({ clock, camera }) => {
-    camera.position.z = 50 + Math.sin(clock.getElapsedTime()) * 10;
+  useFrame(({ clock, camera, mouse, viewport }) => {
+    camera.position.z = 50 + Math.sin(clock.getElapsedTime())/2 * 10;
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
      //console.log(document.Show.MouseX.value);
     camera.position.y = 100-(winScroll );
+    x = (mouse.x * viewport.width) / 10
+    //y = (mouse.y * viewport.height) / 10
+    camera.position.x = winScroll*2 ;
+    camera.lookAt(0, 0, -1200);
+    console.log(winScroll)
+    //camera.position.y = y
   });
   return null;
 }

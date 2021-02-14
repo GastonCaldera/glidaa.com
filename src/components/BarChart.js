@@ -43,7 +43,7 @@ class BarChart extends Component {
     const colorScale = d3
       .scaleSequential()
       .domain(colorExtent)
-      .interpolator(d3.interpolateRdYlBu);
+      .interpolator(d3.interpolateRainbow);
 
     d3.select(this.refs.chart)
       .selectAll('rect')

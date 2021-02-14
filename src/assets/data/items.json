@@ -52,7 +52,7 @@
             "slide": "3",
             "card": "1",
             "slideType": "graph",
-            "description": "This webpage demonstrates the medium by which we explain complex medical and diagnostic solutions.",
+            "description": "Different media formats provide opportunities to engage your audience to suit your story",
             "descriptionType": "card",
             "data": "/chartdata/nyc.js",
             "frames": "",
@@ -146,7 +146,7 @@
             "slide": "6",
             "card": "1",
             "slideType": "2d",
-            "description": "Different media formats provide opportunities to engage your audience to suit your story",
+            "description": "This webpage demonstrates the medium by which we explain complex medical and diagnostic solutions.",
             "descriptionType": "card",
             "data": "https://assets6.lottiefiles.com/private_files/lf30_izlxd1pm.json",
             "frames": "450",
@@ -304,6 +304,19 @@
             "description": "We end up with a proposal, a quote and a timeline. ",
             "descriptionType": "card",
             "data": "",
+            "frames": "",
+            "graphChange": "",
+            "static": ""
+        }
+    ],
+    [
+        {
+            "slide": "13",
+            "card": "1",
+            "slideType": "3d",
+            "description": "To make the next step please book a time in our calendar for a discovery session.",
+            "descriptionType": "card",
+            "data": "fish",
             "frames": "",
             "graphChange": "",
             "static": ""

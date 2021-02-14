@@ -289,17 +289,7 @@ function Scrollyteller() {
               </div>
             </div>
 
-            <Chart texts={items[2].map((e) =>               
-              {                 
-                return <Card>
-                  <Card.Body>
-                    <Card.Text>{e.description}</Card.Text>
-                  </Card.Body>
-                </Card>
-              
-              })} 
-              
-              />
+            
           </div>
         ) : null}
 
@@ -421,7 +411,18 @@ function Scrollyteller() {
           </div>
         </div>
       </div>
-
+      <div css={narrativeStyle}><Chart texts={items[2].map((e) =>               
+              {                 
+                return <Card>
+                  <Card.Body>
+                    <Card.Text>{e.description}</Card.Text>
+                  </Card.Body>
+                </Card>
+              
+              })} 
+              
+              />
+              </div>
       <div style={{ position: "relative" }}>
         <WaterAnimation />
         <div
@@ -441,10 +442,10 @@ function Scrollyteller() {
               alignItems: "center",
             }}
           >
-            {/* <div
+            { <div
               style={{
                 background: "white",
-                padding: "20px",
+       
                 boxShadow: "2px 2px 10px white",
               }}
             >
@@ -455,13 +456,13 @@ function Scrollyteller() {
                   </Card.Text>
                 </Card.Body>
               </Card>
-            </div> */}
+            </div> }
           
             <a href="https://calendly.com/michaelcastleman/call" target="_blank"><div
              className="bookTimeBtn"
             >
-              <span style={{ width: "max-content", color: "white" }}>
-                {items.length > 0 ? items[12][0].description : "loading..."}
+              <span style={{ width: "max-content", color: "white", padding: "10px"}}>
+                {items.length > 0 ? items[13][0].description : "loading..."}
               </span>
             </div></a>
           </div>

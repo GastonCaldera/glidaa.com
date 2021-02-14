@@ -117,7 +117,7 @@ class Chart extends React.Component {
     }
 
     const el = document.querySelector(`#waypoint-${city}`)
-    el.style.backgroundColor = 'white';
+  
 
   }
 

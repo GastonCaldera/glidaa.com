@@ -33,7 +33,6 @@ const styles = {
   step:{
     height:"max-content",
     width:"100%",
-
     marginBottom:"500px",
     fontSize:"25px",
     textAlign:"center",
@@ -47,7 +46,8 @@ const styles = {
   title: {
     margin:"20px 0",
     padding:"0",
-    fontSize:"35px"
+    fontSize:"25px",
+    textAlign:"center"
   },
   trigger: {
     borderTop:"1px dashed black",

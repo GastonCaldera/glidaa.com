@@ -428,7 +428,7 @@ function Scrollyteller() {
         <div
           style={{
             position: "relative",
-            top: "0",
+            top: "40",
             display: "grid",
             placeItems: "center",
             width: "100%",
@@ -449,7 +449,7 @@ function Scrollyteller() {
                 boxShadow: "2px 2px 10px white",
               }}
             >
-              <Card>
+              <Card style={{top: "40"}}>
                 <Card.Body>
                   <Card.Text>To make the next step please book a time in our calendar for a discovery session.
                   </Card.Text>

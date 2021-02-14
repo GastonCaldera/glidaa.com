@@ -20,6 +20,7 @@ import D3Header from "./D3Header";
 import LottiePlayer from "./LottiePlayer"
 
 import background from "../assets/images/background.png"
+import background2 from "../assets/images/background2.png"
 import load from "../assets/images/load.gif"
 
 import itemsJSON from "../assets/data/items.json"
@@ -242,7 +243,11 @@ function Scrollyteller() {
         <div className="progressBar-container"> <div  alt="loading" className="loading"></div>
         </div>
       </div>} */}
-      <img src={background} alt="background" style={{ position: 'fixed', 'top': "0", left: '0', "width": "100vw", height: "100vh", zIndex: '-1' }}></img>
+      <picture>
+          <source srcSet={background2} media="(max-width: 650px)"></source>
+          <source srcSet={background2} ></source>
+          <img src={background} alt="background" style={{ position: 'fixed', 'top': "0", left: '0', "width": "100vw", height: "100vh", zIndex: '-1' }}></img>
+      </picture>
       <div css={narrativeStyle}>
         {items.length > 0 ? (
           <div>

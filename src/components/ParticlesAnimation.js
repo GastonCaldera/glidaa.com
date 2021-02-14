@@ -125,6 +125,8 @@ const Map = (props) => {
 
 var x;
 var y;
+let clientX = 0;
+let clientY = 0;
 function Dolly() {
   
   // This one makes the camera move in and out
@@ -133,15 +135,23 @@ function Dolly() {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
      //console.log(document.Show.MouseX.value);
     camera.position.y = 100-(winScroll );
+    camera.position.y += clientY; 
     x = (mouse.x * viewport.width) / 10
     //y = (mouse.y * viewport.height) / 10
     camera.position.x = winScroll*2 ;
+    camera.position.x+=clientX;
     camera.lookAt(0, 0, -1200);
 
     //camera.position.y = y
   });
   return null;
 }
+
+window.addEventListener('mousemove', (e) => {
+  console.log(e.clientX, e.clientY)
+  clientX = e.clientX/2
+  clientY = e.clientY/2
+})
 
 export default function ParticlesAnimation() {
   return (
@@ -155,7 +165,7 @@ export default function ParticlesAnimation() {
           {`uniform vec3 color;\nvoid main() {\n\tif ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;\n\tgl_FragColor = vec4( color, 1.0 );\n}`}
         </script>
       </Helmet>
-      <div style={{ color: "white" }}>
+      <div style={{ color: "white" }} >
         <div
           className="particles"
           style={{

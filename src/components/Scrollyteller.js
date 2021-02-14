@@ -411,9 +411,10 @@ function Scrollyteller() {
           </div>
         </div>
       </div>
-      <div css={narrativeStyle}><Chart texts={items[2].map((e) =>               
+      <div >
+        <Chart texts={items[2].map((e) =>               
               {                 
-                return <Card>
+                return <Card css={narrativeStyle}>
                   <Card.Body>
                     <Card.Text>{e.description}</Card.Text>
                   </Card.Body>

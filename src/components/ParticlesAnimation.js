@@ -135,7 +135,7 @@ function Dolly() {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
      //console.log(document.Show.MouseX.value);
     camera.position.y = 100-(winScroll );
-    camera.position.y += clientY; 
+    camera.position.y -= clientY; 
     x = (mouse.x * viewport.width) / 10
     //y = (mouse.y * viewport.height) / 10
     camera.position.x = winScroll*2 ;
@@ -148,7 +148,7 @@ function Dolly() {
 }
 
 window.addEventListener('mousemove', (e) => {
-  console.log(e.clientX, e.clientY)
+  //console.log(e.clientX, e.clientY)
   clientX = e.clientX/2
   clientY = e.clientY/2
 })

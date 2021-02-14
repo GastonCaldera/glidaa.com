@@ -444,7 +444,7 @@ function Scrollyteller() {
           >
             { <div
               style={{
-                background: "white",
+             
        
                 boxShadow: "2px 2px 10px white",
               }}

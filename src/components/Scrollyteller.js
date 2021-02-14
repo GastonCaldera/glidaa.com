@@ -1,11 +1,13 @@
 /** @jsx jsx */
-import { useEffect, useState, useCallback} from "react";
-import {  jsx } from "@emotion/core";
+import { useEffect, useState, useCallback } from "react";
+import { jsx } from "@emotion/core";
 import { Card } from "react-bootstrap";
 import { Scrollama, Step } from "react-scrollama";
-import { narrativeStyle } from "../helper/constants"
+import { narrativeStyle } from "../helper/constants";
 
 import scrollama from "scrollama";
+
+import { Waypoint } from "react-waypoint";
 
 import { create } from "@lottiefiles/lottie-interactivity";
 
@@ -17,13 +19,13 @@ import WaterAnimation from "./WaterAnimation";
 
 import Chart from "./Chart";
 import D3Header from "./D3Header";
-import LottiePlayer from "./LottiePlayer"
+import LottiePlayer from "./LottiePlayer";
 
-import background from "../assets/images/background.png"
-import background2 from "../assets/images/background2.png"
-import load from "../assets/images/load.gif"
+import background from "../assets/images/background.png";
+import background2 from "../assets/images/background2.png";
+import load from "../assets/images/load.gif";
 
-import itemsJSON from "../assets/data/items.json"
+import itemsJSON from "../assets/data/items.json";
 
 // import button from "../button.svg";
 // import { TangentSpaceNormalMap } from "three";
@@ -38,12 +40,9 @@ const fadeOut = 85; // the lottie starts to disappear when this percentage is re
 
 const narration = require("../assets/data/narration.json");
 
-
-
 function Scrollyteller() {
-  
-  const [data, setData] = useState("1");
-  const [progress, setProgress] = useState(0);
+  // const [data, setData] = useState("1");
+  // const [progress, setProgress] = useState(0);
   // const progress = useRef(0)
 
   const [isOpen, setIsGalleryOpen] = useState(false);
@@ -52,13 +51,13 @@ function Scrollyteller() {
   const [items, setItems] = useState(itemsJSON);
   console.log(items);
   function reloadScrollBars() {
-    document.documentElement.style.overflow = 'auto';  // firefox, chrome
+    document.documentElement.style.overflow = "auto"; // firefox, chrome
     document.body.scroll = "yes"; // ie only
     window.scrollTo({ top: 0 });
   }
 
   function unloadScrollBars() {
-    document.documentElement.style.overflow = 'hidden';  // firefox, chrome
+    document.documentElement.style.overflow = "hidden"; // firefox, chrome
     document.body.scroll = "no"; // ie only
     window.scrollTo({ top: 0 });
   }
@@ -70,7 +69,7 @@ function Scrollyteller() {
     } else {
       unloadScrollBars();
     }
-  }
+  };
 
   let cardScroll = items ? [...items].splice(3, items.length - 1) : null;
   cardScroll = cardScroll ? cardScroll.splice(0, cardScroll.length - 1) : null;
@@ -113,74 +112,74 @@ function Scrollyteller() {
   //   //   });
   // }, []);
 
+  // useEffect(() => {
+  //   // instantiate the scrollama
+  //   const scroller = scrollama();
+
+  //   // setup the instance, pass callback functions
+  //   scroller
+  //     .setup({
+  //       step: ".step",
+  //     })
+  //     .onStepEnter((response) => {
+  //       // { element, index, direction }
+  //       if (response.index === 1) {
+  //         response.element.style.background = "none";
+  //       } else if (response.index === 2) {
+  //         response.element.style.background = "none";
+  //       } else {
+  //         response.element.style.background = "none";
+  //       }
+  //     })
+  //     .onStepExit((response) => {
+  //       if (response.index === 1) {
+  //         response.element.style.background = "none";
+  //       } else if (response.index === 2) {
+  //         response.element.style.background = "none";
+  //       } else {
+  //         response.element.style.background = "none";
+  //       }
+  //     });
+
+  //   // setup resize event
+  //   window.addEventListener("resize", scroller.resize);
+
+  //   return () => window.removeEventListener("resize", scroller.resize);
+  // }, []);
+
+  // useEffect(() => {
+  //   const actSlide = document.querySelector(`.left-side:nth-child(${data})`);
+
+  //   if (actSlide) {
+  //     const auxFadeIn = fadeIn / 100;
+  //     const auxFadeOut = fadeOut / 100;
+  //     actSlide.style.opacity = "1";
+
+  //     // if (!actSlide.classList.contains("video")) {
+  //     //   if (items.length > 1) {
+  //     //     if (progress <= auxFadeIn) {
+  //     //       actSlide.style.opacity = `${progress * (1 / auxFadeIn)}`;
+  //     //     } else if (progress > auxFadeIn && progress < auxFadeOut) {
+  //     //       actSlide.style.opacity = "1";
+  //     //     } else {
+  //     //       actSlide.style.opacity = `${
+  //     //         (1 - progress) * (1 / (1 - auxFadeOut))
+  //     //       }`;
+  //     //     }
+  //     //   }
+  //     // } else {
+  //     //   if (progress <= 5 / 100) {
+  //     //     actSlide.style.opacity = "0";
+  //     //   } else if (progress > 5 / 100 && progress < auxFadeOut) {
+  //     //     actSlide.style.opacity = "1";
+  //     //   } else {
+  //     //     actSlide.style.opacity = "0";
+  //     //   }
+  //     // }
+  //   }
+  // }, [data]);
+
   useEffect(() => {
-    // instantiate the scrollama
-    const scroller = scrollama();
-
-    // setup the instance, pass callback functions
-    scroller
-      .setup({
-        step: ".step",
-      })
-      .onStepEnter((response) => {
-        // { element, index, direction }
-        if (response.index === 1) {
-          response.element.style.background = "none";
-        } else if (response.index === 2) {
-          response.element.style.background = "none";
-        } else {
-          response.element.style.background = "none";
-        }
-      })
-      .onStepExit((response) => {
-        if (response.index === 1) {
-          response.element.style.background = "none";
-        } else if (response.index === 2) {
-          response.element.style.background = "none";
-        } else {
-          response.element.style.background = "none";
-        }
-      });
-
-    // setup resize event
-    window.addEventListener("resize", scroller.resize);
-
-    return () => window.removeEventListener("resize", scroller.resize);
-  }, []);
-
-  useEffect(() => {
-    const actSlide = document.querySelector(`.left-side:nth-child(${data})`);
-
-    if (actSlide) {
-      const auxFadeIn = fadeIn / 100;
-      const auxFadeOut = fadeOut / 100;
-
-      if (!actSlide.classList.contains("video")) {
-        if (items.length > 1) {
-          if (progress <= auxFadeIn) {
-            actSlide.style.opacity = `${progress * (1 / auxFadeIn)}`;
-          } else if (progress > auxFadeIn && progress < auxFadeOut) {
-            actSlide.style.opacity = "1";
-          } else {
-            actSlide.style.opacity = `${(1 - progress) * (1 / (1 - auxFadeOut))
-              }`;
-          }
-        }
-      } else {
-
-        if (progress <= 5 / 100) {
-          actSlide.style.opacity = "0";
-        } else if (progress > 5 / 100 && progress < auxFadeOut) {
-          actSlide.style.opacity = "1";
-        } else {
-          actSlide.style.opacity = "0";
-        }
-      }
-    }
-  }, [data, progress]);
-
-  useEffect(() => {
-
     document.querySelectorAll("lottie-player").forEach((lottie, i) => {
       lottie.addEventListener("load", function (e) {
         create({
@@ -200,53 +199,67 @@ function Scrollyteller() {
     });
   }, []);
 
-  const onStepEnter = ({ data }) => {
+  const onStepEnter = (data) => {
     // console.log("------------------");
     document.querySelectorAll(".left-side").forEach((lottie, index) => {
       lottie.style.display = index + 1 == data ? "block" : "none";
     });
 
     // document.querySelector('.content').style.display = data >= 8 ? 'block' : 'none';
-    setData(data);
-    setProgress(0);
+    // setData(data);
+    // setProgress(0);
     // progress.current = 0;
   };
 
-  const onStepExit = ({ element }) => {
-    // console.log(element)
-    setProgress(0);
-    // progress.current = 0;
-    // element.style.backgroundColor = "#fff";
-  };
+  // const onStepExit = ({ element }) => {
+  //   // console.log(element)
+  //   setProgress(0);
+  //   // progress.current = 0;
+  //   // element.style.backgroundColor = "#fff";
+  // };
 
-  const onStepProgress = ({ element, progress }) => {
-    // console.log(element)
-    // console.log(progress)
-    // progress.current = ActProgress;
-    setProgress(progress);
-    // this.setState({ progress });
-  };
+  // const onStepProgress = ({ element, progress }) => {
+  //   // console.log(element)
+  //   // console.log(progress)
+  //   // progress.current = ActProgress;
+  //   setProgress(progress);
+  //   // this.setState({ progress });
+  // };
 
-  const handleGalleryClick = useCallback((val) => {
-    if (val != 7) return;
-    setIsGalleryOpen(true);
-  }, [isOpen]);
+  const handleGalleryClick = useCallback(
+    (val) => {
+      if (val != 7) return;
+      setIsGalleryOpen(true);
+    },
+    [isOpen]
+  );
 
   const handleOnclose = (event) => {
     setIsGalleryOpen(false);
-  }
+  };
 
   return (
-    <div >
+    <div>
       {/* {isOverlay && <div className="overlay">
         <img src={background} alt="background" style={{ position: 'fixed', 'top': "0", left: '0', "width": "100vw", height: "100vh", zIndex: '9999999' }}></img>
         <div className="progressBar-container"> <div  alt="loading" className="loading"></div>
         </div>
       </div>} */}
       <picture>
-          <source srcSet={background2} media="(max-width: 650px)"></source>
-          <source srcSet={background2} ></source>
-          <img src={background} alt="background" style={{ position: 'fixed', 'top': "0", left: '0', "width": "100vw", height: "100vh", zIndex: '-1' }}></img>
+        <source srcSet={background2} media="(max-width: 650px)"></source>
+        <source srcSet={background2}></source>
+        <img
+          src={background}
+          alt="background"
+          style={{
+            position: "fixed",
+            top: "0",
+            left: "0",
+            width: "100vw",
+            height: "100vh",
+            zIndex: "-1",
+          }}
+        ></img>
       </picture>
       <div css={narrativeStyle}>
         {items.length > 0 ? (
@@ -288,8 +301,6 @@ function Scrollyteller() {
                 </Scrollama>
               </div>
             </div>
-
-            
           </div>
         ) : null}
 
@@ -297,58 +308,62 @@ function Scrollyteller() {
           <div className="graphic">
             {items.length > 0
               ? cardScroll.map((left, i) => {
-                if (left[0].slideType === "video") {
-                  return (
-                    <div className="left-side video" key={i}>
-                      <VideoBackground src={left[0].data} />
-                    </div>
-                  );
-                } else if (left[0].slideType === "2d") {
-                  return (
-                    <div className="left-side" key={i}>
-                      <LottiePlayer
-                        id={`lottie${i + 1}`}
-                        mode="seek"
-                        src={left[0].data}
-                        key={i}
-                      />
-                    </div>
-                  );
-                } else if (left[0].slideType === "3d") {
-                  if (left[0].data === "dark") {
+                  if (left[0].slideType === "video") {
                     return (
                       <div className="left-side video" key={i}>
-                        <WaterAnimation />
+                        <VideoBackground src={left[0].data} />
+                      </div>
+                    );
+                  } else if (left[0].slideType === "2d") {
+                    return (
+                      <div className="left-side" key={i}>
+                        <LottiePlayer
+                          id={`lottie${i + 1}`}
+                          mode="seek"
+                          src={left[0].data}
+                          key={i}
+                        />
+                      </div>
+                    );
+                  } else if (left[0].slideType === "3d") {
+                    if (left[0].data === "dark") {
+                      return (
+                        <div className="left-side video" key={i}>
+                          <WaterAnimation />
+                        </div>
+                      );
+                    }
+                  } else if (left[0].slideType === "porfolio") {
+                    return (
+                      <div className="left-side video" key={i}>
+                        {isOpen && (
+                          <MyGallery
+                            isOpen={isOpen}
+                            lightboxWillClose={handleOnclose}
+                          />
+                        )}
+                        {!isOpen && <MyGallery />}
                       </div>
                     );
                   }
-                } else if (left[0].slideType === "porfolio") {
-                  return (
-                    <div className="left-side video" key={i}>
-                      {isOpen && <MyGallery isOpen={isOpen} lightboxWillClose={handleOnclose} />}
-                      {!isOpen && <MyGallery />}
-                    </div>
-                  );
-                }
 
-                return null;
-              })
+                  return null;
+                })
               : null}
           </div>
 
           <div className="scroller" id="scroller">
-            <Scrollama
-              onStepEnter={onStepEnter}
-              onStepExit={onStepExit}
-              progress
-              onStepProgress={onStepProgress}
-              offset={0.33}
-            >
-              {cardScroll.length > 0
-                ? cardScroll.map((narr, i) => {
+            {cardScroll.length > 0
+              ? cardScroll.map((narr, i) => {
                   return (
-                    <Step data={i + 1} key={i + 1}>
-                      <div onClick={() => handleGalleryClick(i)}
+                    <Waypoint
+                      onEnter={() => {
+                        onStepEnter(i + 1);
+                      }}
+                      key={i + 1}
+                    >
+                      <div
+                        onClick={() => handleGalleryClick(i)}
                         className="step"
                         id={`step${i + 1}`}
                         style={{
@@ -374,24 +389,29 @@ function Scrollyteller() {
                             </div>
                           ))
                         ) : (
-                            <div
-                              className="desc"
-                              id={`desc${i + 1}`}
-                              key={`${i}`}
-                            >
-                              <Card>
-                                <Card.Body>
-                                  <Card.Text>Loading</Card.Text>
-                                </Card.Body>
-                              </Card>
-                            </div>
-                          )}
+                          <div
+                            className="desc"
+                            id={`desc${i + 1}`}
+                            key={`${i}`}
+                          >
+                            <Card>
+                              <Card.Body>
+                                <Card.Text>Loading</Card.Text>
+                              </Card.Body>
+                            </Card>
+                          </div>
+                        )}
                       </div>
-                    </Step>
+                    </Waypoint>
                   );
                 })
-                : narration.map((narr) => (
-                  <Step data={narr.key} key={narr.key}>
+              : narration.map((narr) => (
+                  <Waypoint
+                    onEnter={() => {
+                      onStepEnter(narr.key);
+                    }}
+                    key={narr.key}
+                  >
                     <div
                       className="step"
                       id={`step${narr.key}`}
@@ -405,25 +425,24 @@ function Scrollyteller() {
                         </Card>
                       </div>
                     </div>
-                  </Step>
+                  </Waypoint>
                 ))}
-            </Scrollama>
           </div>
         </div>
       </div>
-      <div >
-        <Chart texts={items[2].map((e) =>               
-              {                 
-                return <Card css={narrativeStyle}>
-                  <Card.Body>
-                    <Card.Text>{e.description}</Card.Text>
-                  </Card.Body>
-                </Card>
-              
-              })} 
-              
-              />
-              </div>
+      <div>
+        <Chart
+          texts={items[2].map((e) => {
+            return (
+              <Card css={narrativeStyle}>
+                <Card.Body>
+                  <Card.Text>{e.description}</Card.Text>
+                </Card.Body>
+              </Card>
+            );
+          })}
+        />
+      </div>
       <div style={{ position: "relative" }}>
         <WaterAnimation />
         <div
@@ -443,28 +462,33 @@ function Scrollyteller() {
               alignItems: "center",
             }}
           >
-            { <div
-              style={{
-             
-       
-                boxShadow: "2px 2px 10px white",
-              }}
+            {
+              <div
+                style={{
+                  boxShadow: "2px 2px 10px white",
+                }}
+              >
+                <Card style={{ top: "40" }}>
+                  <Card.Body>
+                    <Card.Text>
+                      To make the next step please book a time in our calendar
+                      for a discovery session.
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
+            }
+
+            <a
+              href="https://calendly.com/michaelcastleman/call"
+              target="_blank"
             >
-              <Card style={{top: "40"}}>
-                <Card.Body>
-                  <Card.Text>To make the next step please book a time in our calendar for a discovery session.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div> }
-          
-            <a href="https://calendly.com/michaelcastleman/call" target="_blank"><div
-             className="bookTimeBtn"
-            >
-              <span style={{  color: "white", padding: "10px"}}>
-                {items.length > 0 ? items[12][0].description : "loading..."}
-              </span>
-            </div></a>
+              <div className="bookTimeBtn">
+                <span style={{ color: "white", padding: "10px" }}>
+                  {items.length > 0 ? items[12][0].description : "loading..."}
+                </span>
+              </div>
+            </a>
           </div>
         </div>
       </div>

@@ -451,8 +451,7 @@ function Scrollyteller() {
             >
               <Card>
                 <Card.Body>
-                  <Card.Text>
-                    {items.length > 0 ? items[12][0].description : "loading..."}
+                  <Card.Text>To make the next step please book a time in our calendar for a discovery session.
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -461,8 +460,8 @@ function Scrollyteller() {
             <a href="https://calendly.com/michaelcastleman/call" target="_blank"><div
              className="bookTimeBtn"
             >
-              <span style={{ width: "max-content", color: "white", padding: "10px"}}>
-                {items.length > 0 ? items[13][0].description : "loading..."}
+              <span style={{  color: "white", padding: "10px"}}>
+                {items.length > 0 ? items[12][0].description : "loading..."}
               </span>
             </div></a>
           </div>

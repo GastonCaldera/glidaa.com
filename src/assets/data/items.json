@@ -312,19 +312,6 @@
     [
         {
             "slide": "13",
-            "card": "1",
-            "slideType": "3d",
-            "description": "To make the next step please book a time in our calendar for a discovery session.",
-            "descriptionType": "card",
-            "data": "fish",
-            "frames": "",
-            "graphChange": "",
-            "static": ""
-        }
-    ],
-    [
-        {
-            "slide": "13",
             "card": "2",
             "slideType": "3d",
             "description": "Book a time",

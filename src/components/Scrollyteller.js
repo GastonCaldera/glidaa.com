@@ -277,7 +277,7 @@ function Scrollyteller() {
                 ></lottie-player>
               </div>
               <div className="scroller">
-                <Scrollama>
+               {/*  <Scrollama>
                   <Step data={0} key={0}>
                     <div
                       className="step"
@@ -298,7 +298,7 @@ function Scrollyteller() {
                       </div>
                     </div>
                   </Step>
-                </Scrollama>
+                </Scrollama> */}
               </div>
             </div>
           </div>

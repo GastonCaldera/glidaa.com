@@ -194,7 +194,7 @@ function Scrollyteller() {
               frames: [0, lotties[i][0].frames],
             },
           ],
-          renderer: "canvas",
+         
         });
       });
     });
@@ -275,6 +275,7 @@ function Scrollyteller() {
                   mode="seek"
                   src={items[1][0].data}
                   key={0}
+                  renderer='canvas'
                 ></lottie-player>
               </div>
               <div className="scroller">
@@ -318,12 +319,14 @@ function Scrollyteller() {
                   } else if (left[0].slideType === "2d") {
                     return (
                       <div className="left-side" key={i}>
-                        <LottiePlayer
-                          id={`lottie${i + 1}`}
-                          mode="seek"
-                          src={left[0].data}
-                          key={i}
-                        />
+                        <lottie-player
+                            id={`lottie${i + 1}`}
+                            mode="seek"
+                            src={left[0].data}
+                            key={i}
+                            renderer='canvas'
+                          ></lottie-player>
+               
                       </div>
                     );
                   } else if (left[0].slideType === "3d") {

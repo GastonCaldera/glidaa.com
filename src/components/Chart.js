@@ -14,10 +14,10 @@ const styles = {
   },
   graphic: {
     flexBasis: "50%",
-    height: "75vh",
+    height: "300px",
     position: "sticky",
     width: "100%",
-    top: "0",
+    top: "100px",
     fontSize: "60px",
     alignSelf: "flex-start",
   },

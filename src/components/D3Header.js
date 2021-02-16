@@ -1,8 +1,6 @@
 import React from "react";
-import ParticlesAnimation from "./ParticlesAnimation"
-import ScrollAnimation from "./ScrollAnimation"
-
-
+import ParticlesAnimation from "./ParticlesAnimation";
+import ScrollAnimation from "./ScrollAnimation";
 
 const D3Header = React.memo(({ texts }) => {
   return (
@@ -26,7 +24,9 @@ const D3Header = React.memo(({ texts }) => {
         }}
       >
         <p style={{ fontWeight: "bolder", fontSize: "40px" }}>
-          <span style={{ color: "#7578bc" }}>{"{"}Explainer</span> Page<sup style={{ fontWeight: "bolder", fontSize: "20px" }}>&#8482;</sup>{"}"}
+          <span style={{ color: "#7578bc" }}>{"{"}Explainer</span> Page
+          <sup style={{ fontWeight: "bolder", fontSize: "20px" }}>&#8482;</sup>
+          {"}"}
         </p>
         <div
           className="card"
@@ -37,9 +37,7 @@ const D3Header = React.memo(({ texts }) => {
             opacity: "0.8",
           }}
         >
-          <p style={{ fontWeight: "bolder", fontSize: "20px" }}>
-            {texts[0]}
-          </p>
+          <p style={{ fontWeight: "bolder", fontSize: "20px" }}>{texts[0]}</p>
           <p
             style={{
               fontWeight: "bolder",
@@ -49,9 +47,7 @@ const D3Header = React.memo(({ texts }) => {
           >
             {texts[1]}
           </p>
-          <p style={{ fontWeight: "bolder", fontSize: "20px" }}>
-            {texts[2]}
-          </p>
+          <p style={{ fontWeight: "bolder", fontSize: "20px" }}>{texts[2]}</p>
         </div>
       </div>
     </>

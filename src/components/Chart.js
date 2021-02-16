@@ -1,137 +1,144 @@
-import React from 'react';
+import React from "react";
 import injectSheet from "react-jss";
 import { Waypoint } from "react-waypoint";
-import nyc from "../assets/data/chart-data/nyc.js"
-import sf from "../assets/data/chart-data/sf.js"
-import am from "../assets/data/chart-data/am.js"
-import BarChart from "./BarChart.js"
-import { Geometry } from 'three';
+import nyc from "../assets/data/chart-data/nyc.js";
+import sf from "../assets/data/chart-data/sf.js";
+import am from "../assets/data/chart-data/am.js";
+import BarChart from "./BarChart.js";
+import { Geometry } from "three";
 
 const styles = {
   axisRed: {
-    stroke:"yellow",
-    strokeWidth:"5px"
+    stroke: "yellow",
+    strokeWidth: "5px",
   },
   graphic: {
-    flexBasis:"50%",
-    height:"300px",
+    flexBasis: "50%",
+    height: "75vh",
     position: "sticky",
-    top:"100px",
-    fontSize:"60px"
+    width: "100%",
+    top: "0",
+    fontSize: "60px",
+    alignSelf: "flex-start",
   },
   description: {
-    height:"600px",
-    textAlign:"center",
-    padding:"50px 50px",
-    fontSize:"20px"
+    height: "600px",
+    textAlign: "center",
+    padding: "50px 50px",
+    fontSize: "20px",
   },
   container: {
-    display:"flex",
-    justifyContent:"space-around",
-    flexDirection:"column"
+    display: "flex",
+    justifyContent: "space-around",
+    flexDirection: "column",
   },
-  step:{
-    height:"max-content",
-    width:"100%",
-    marginBottom:"500px",
-    fontSize:"25px",
-    textAlign:"center",
-    padding:'40px',
-    zIndex:1
+  step: {
+    height: "max-content",
+    width: "100%",
+    marginBottom: "500px",
+    fontSize: "25px",
+    textAlign: "center",
+    padding: "40px",
+    zIndex: 1,
   },
   scroller: {
-    flexBasis:"40%",
-    padding:"500px 0px 0px 0px"
+    flexBasis: "40%",
+    padding: "500px 0px 0px 0px",
   },
   title: {
-    margin:"20px 0",
-    padding:"0",
-    fontSize:"25px",
-    textAlign:"center"
+    margin: "20px 0",
+    padding: "0",
+    fontSize: "25px",
+    textAlign: "center",
   },
   trigger: {
-    borderTop:"1px dashed black",
+    borderTop: "1px dashed black",
     marginTop: "50vh",
-    position:"fixed",
-    width:"100%"
+    position: "fixed",
+    width: "100%",
   },
   "@media (min-width: 768px)": {
     container: {
-      flexDirection:"row"
+      flexDirection: "row",
     },
     step: {
-      '&:last-child': {
+      "&:last-child": {
         marginBottom: "200px",
       },
-      padding:'10'
+      padding: "10",
     },
     description: {
-      padding:"100px 250px"
-    }
-  }
-}
+      padding: "100px 250px",
+    },
+  },
+};
 
-const cities = ["nyc", "sf", "am"]
-const cityNames = {"nyc": "New York City", "sf": "San Francisco", "am": "Amsterdam", "": ""}
-const cityNames2 = {"nyc": "New York City", "sf": "San Francisco", "am": "Amsterdam", "": ""}
+const cities = ["nyc", "sf", "am"];
+const cityNames = {
+  nyc: "New York City",
+  sf: "San Francisco",
+  am: "Amsterdam",
+  "": "",
+};
+const cityNames2 = {
+  nyc: "New York City",
+  sf: "San Francisco",
+  am: "Amsterdam",
+  "": "",
+};
 
 class Chart extends React.Component {
   state = {
-    temps:{},
+    temps: {},
     city: "",
     screenWidth: 0,
-    screenHeight: 0
-  }
+    screenHeight: 0,
+  };
 
   componentDidMount() {
-      sf.forEach(day => (day.date = new Date(day.date)));
-      nyc.forEach(day => (day.date = new Date(day.date)));
-      am.forEach(day => (day.date = new Date(day.date)));
-      this.setState({ temps: { sf, nyc, am } });
-      window.addEventListener('resize', this.onResize, false)
-      this.onResize()
+    sf.forEach((day) => (day.date = new Date(day.date)));
+    nyc.forEach((day) => (day.date = new Date(day.date)));
+    am.forEach((day) => (day.date = new Date(day.date)));
+    this.setState({ temps: { sf, nyc, am } });
+    window.addEventListener("resize", this.onResize, false);
+    this.onResize();
   }
 
   onResize = () => {
-    let screenWidth = window.innerWidth
-    let screenHeight = window.innerHeight
+    let screenWidth = window.innerWidth;
+    let screenHeight = window.innerHeight;
 
-    if( screenWidth > 768 ) {
-      screenWidth = screenWidth * .42;
+    if (screenWidth > 768) {
+      screenWidth = screenWidth * 0.42;
     } else {
-      screenWidth = screenWidth * .90;
+      screenWidth = screenWidth * 0.9;
     }
 
-    this.setState({screenWidth, screenHeight})
-  }
+    this.setState({ screenWidth, screenHeight });
+  };
 
-  onStepEnter = (city, {currentPosition, previousPosition}) => {
-    this.setState({city})
+  onStepEnter = (city, { currentPosition, previousPosition }) => {
+    this.setState({ city });
+  };
 
-
-  }
-
-  onStepExit = (city, {currentPosition, previousPosition}) => {
-    if( city === "nyc" && currentPosition === "below") {
-      this.setState({city: "nyc"})
+  onStepExit = (city, { currentPosition, previousPosition }) => {
+    if (city === "nyc" && currentPosition === "below") {
+      this.setState({ city: "nyc" });
     }
 
-    const el = document.querySelector(`#waypoint-${city}`)
-  
-
-  }
+    const el = document.querySelector(`#waypoint-${city}`);
+  };
 
   render() {
-    const { classes } = this.props
-    const {texts} = this.props
-    cityNames['nyc'] = texts[0];
-    cityNames['sf'] = texts[1];
-    cityNames['am'] = texts[2];
-    const { city, screenWidth, screenHeight } = this.state
-
+    const { classes } = this.props;
+    const { texts } = this.props;
+    cityNames["nyc"] = texts[0];
+    cityNames["sf"] = texts[1];
+    cityNames["am"] = texts[2];
+    const { city, screenWidth, screenHeight } = this.state;
 
     return (
-      <div style={{marginTop:'30px'}}>
+      <div style={{ marginTop: "30px" }}>
         {/* <div className={classes.trigger}>trigger</div>
         <div className={classes.description}>
           Scrollytelling is a technique used to make changes to a graphic or other ui component as a reader scrolls down a page.
@@ -140,21 +147,48 @@ class Chart extends React.Component {
         </div> */}
         <div className={classes.container}>
           <div className={classes.graphic}>
-          
-            <BarChart width={screenWidth} height={screenHeight} data={city ? this.state.temps[city] : {} } />
-            <p className={classes.title}>Mobile phone activity: <span style={{color:"#1aa3ff", padding:"3px", borderRadius:"2px"}}>{cityNames2[city]}</span></p>
+            <BarChart
+              width={screenWidth}
+              height={screenHeight}
+              data={city ? this.state.temps[city] : {}}
+            />
+            <p className={classes.title}>
+              Mobile phone activity:{" "}
+              <span
+                style={{
+                  color: "#1aa3ff",
+                  padding: "3px",
+                  borderRadius: "2px",
+                }}
+              >
+                {cityNames2[city]}
+              </span>
+            </p>
           </div>
           <div className={classes.scroller}>
-            {cities.map(city => {
+            {cities.map((city) => {
               return (
-                <Waypoint onEnter={((obj) => this.onStepEnter(city, obj))} onLeave={((obj) => this.onStepExit(city, obj))} scrollableAncestor={window} topOffset={"33%"} bottomOffset={"66%"} key={city}>
-                  <div id={`waypoint-${city}`} className={classes.step} key={city}>{cityNames[city]} </div>
+                <Waypoint
+                  onEnter={(obj) => this.onStepEnter(city, obj)}
+                  onLeave={(obj) => this.onStepExit(city, obj)}
+                  scrollableAncestor={window}
+                  topOffset={"33%"}
+                  bottomOffset={"66%"}
+                  key={city}
+                >
+                  <div
+                    id={`waypoint-${city}`}
+                    className={classes.step}
+                    key={city}
+                  >
+                    {cityNames[city]}{" "}
+                  </div>
                 </Waypoint>
-              )
+              );
             })}
           </div>
         </div>
-        <div style={{height:"100px"}}></div>
+        <div style={{ height: "100px" }}></div>
       </div>
     );
   }

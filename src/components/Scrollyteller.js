@@ -318,7 +318,8 @@ function Scrollyteller() {
                   } else if (left[0].slideType === "2d") {
                     return (
                       <div className="left-side" key={i}>
-                        <LottiePlayer
+                        <lottie-player
+                          className="left-side"
                           id={`lottie${i + 1}`}
                           mode="seek"
                           src={left[0].data}

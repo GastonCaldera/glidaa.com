@@ -194,7 +194,6 @@ function Scrollyteller() {
               frames: [0, lotties[i][0].frames],
             },
           ],
-          renderer: "canvas",
         });
       });
     });

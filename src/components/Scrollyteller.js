@@ -269,14 +269,14 @@ function Scrollyteller() {
 
             <div className="main" style={{ marginBottom: "200px" }}>
               <div className="graphic">
-                <lottie-player
+                <LottiePlayer
                   className="left-side"
                   id={`lottie0`}
                   mode="seek"
                   src={items[1][0].data}
                   key={0}
                   renderer='canvas'
-                ></lottie-player>
+                ></LottiePlayer>
               </div>
               <div className="scroller">
                 {
@@ -319,14 +319,13 @@ function Scrollyteller() {
                   } else if (left[0].slideType === "2d") {
                     return (
                       <div className="left-side" key={i}>
-                        <lottie-player
-                            id={`lottie${i + 1}`}
-                            mode="seek"
-                            src={left[0].data}
-                            key={i}
-                            renderer='canvas'
-                          ></lottie-player>
-               
+                        <LottiePlayer
+                          id={`lottie${i + 1}`}
+                          mode="seek"
+                          src={left[0].data}
+                          key={i}
+                          renderer="canvas"
+                        />
                       </div>
                     );
                   } else if (left[0].slideType === "3d") {

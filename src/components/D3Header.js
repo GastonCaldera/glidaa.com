@@ -24,7 +24,7 @@ const D3Header = React.memo(({ texts }) => {
         }}
       >
         <p style={{ fontWeight: "bolder", fontSize: "40px" }}>
-          <span style={{ color: "#7578bc" }}>{"{"}Explainer</span> Page
+          <span style={{ color: "#c3c8d6" }}>{"{"}Explainer</span> Page
           <sup style={{ fontWeight: "bolder", fontSize: "20px" }}>&#8482;</sup>
           {"}"}
         </p>
@@ -42,7 +42,7 @@ const D3Header = React.memo(({ texts }) => {
             style={{
               fontWeight: "bolder",
               fontSize: "20px",
-              color: "#7578bc",
+              color: "#c3c8d6",
             }}
           >
             {texts[1]}

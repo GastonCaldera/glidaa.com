@@ -269,14 +269,14 @@ function Scrollyteller() {
 
             <div className="main" style={{ marginBottom: "200px" }}>
               <div className="graphic">
-                <LottiePlayer
+                <lottie-player
                   className="left-side"
                   id={`lottie0`}
                   mode="seek"
                   src={items[1][0].data}
                   key={0}
                   renderer='canvas'
-                ></LottiePlayer>
+                ></lottie-player>
               </div>
               <div className="scroller">
                 {
@@ -324,7 +324,7 @@ function Scrollyteller() {
                           mode="seek"
                           src={left[0].data}
                           key={i}
-                          renderer="canvas"
+                          renderer="svg"
                         />
                       </div>
                     );

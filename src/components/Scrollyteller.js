@@ -274,6 +274,7 @@ function Scrollyteller() {
                   mode="seek"
                   src={items[1][0].data}
                   key={0}
+                  renderer='canvas'
                 ></lottie-player>
               </div>
               <div className="scroller">

@@ -5,6 +5,9 @@ export const narrativeStyle = css`
     max-width: 100%;
   }
 
+  .scrollyTeller-lottie-height {
+    padding-top: 50%;
+  }
   .left-side {
     height: 100vh;
     display: none;

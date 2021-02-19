@@ -2692,10 +2692,10 @@
     pako "^1.0.11"
     resize-observer-polyfill "^1.5.1"
 
-"@lottiefiles/react-lottie-player@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@lottiefiles/react-lottie-player/-/react-lottie-player-3.0.0.tgz#cbbd3a9dcc32ff006465e142fc2759cd8db0dd15"
-  integrity sha512-ON9kHEkZ8zjctg43ikoeJrKbNzHmayCxkF4PoyVYl0+DPKfG3h5knqKLtddCgQS7s2hS63H691t20HRIQ8OTTA==
+"@lottiefiles/react-lottie-player@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@lottiefiles/react-lottie-player/-/react-lottie-player-3.0.1.tgz#a94e01c78c83d017ef843c74441aae26cfc984a4"
+  integrity sha512-pTYlun0lwzx5E/0R51XI/wjoUVkudZ0msi2Njeeokejhl70Hi3LvQiShEDGDVl5IbTphGNroGiPRZxFSulwCCA==
   dependencies:
     lottie-web "^5.6.0"
 
@@ -9118,11 +9118,6 @@ lottie-react-web@^2.2.2:
 lottie-web@^5.1.3, lottie-web@^5.6.0, lottie-web@^5.6.1, lottie-web@^5.6.6:
   version "5.7.6"
   resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.7.6.tgz"
-  integrity sha512-qn/KYMI4QQvFDhtoxs0RPkn9uZKhDB9keE5BKgbJlSRfNEZpRiDlwBE9ibYz4nPhbyE+NUlt8IRIVR7g5OSX3w==
-
-lottie-web@^5.7.6:
-  version "5.7.6"
-  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.7.6.tgz#f20e5555ff120dc1e07ba53adb40061e822f3c48"
   integrity sha512-qn/KYMI4QQvFDhtoxs0RPkn9uZKhDB9keE5BKgbJlSRfNEZpRiDlwBE9ibYz4nPhbyE+NUlt8IRIVR7g5OSX3w==
 
 loud-rejection@^1.0.0:

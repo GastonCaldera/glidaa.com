@@ -327,11 +327,12 @@ function Scrollyteller() {
                         }`}
                         key={i}
                       >
-                        <lottie-player
+                        <LottiePlayer
                           id={`lottie${i + 1}`}
                           mode="seek"
                           src={left[0].data}
                           key={i}
+                          renderer='canvas'
                         />
                       </div>
                     );

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import * as d3 from "d3";
+import React, { Component } from 'react';
+import * as d3 from 'd3';
 const margin = { top: 20, right: 5, bottom: 20, left: 35 };
 const height = 300;
 
@@ -8,38 +8,44 @@ class BarChart extends Component {
     bars: []
   };
 
-  xAxis = d3.axisBottom().tickFormat(d3.timeFormat("%b"));
-  yAxis = d3.axisLeft().tickFormat(d => `${d}`);
+  xAxis = d3.axisBottom().tickFormat(d3.timeFormat('%b'));
+  yAxis = d3.axisLeft().tickFormat((d) => `${d}`);
 
- // xAxis = d3.axisBottom().tickFormat(d3.timeFormat("%b"));
- // yAxis = d3.axisLeft().tickFormat(d => `${d}`);
+  // xAxis = d3.axisBottom().tickFormat(d3.timeFormat("%b"));
+  // yAxis = d3.axisLeft().tickFormat(d => `${d}`);
   componentDidMount() {
-    this.createChart()
+    this.createChart();
   }
 
   componentDidUpdate() {
-    this.createChart()
+    this.createChart();
   }
 
   createChart() {
-    const { data, width } = this.props
+    const { data, width } = this.props;
 
     const xScale = d3
       .scaleTime()
-      .domain([new Date("01/01/2017"), new Date("08/31/2017")])
+      .domain([new Date('01/01/2017'), new Date('08/31/2017')])
       .range([margin.left, width - margin.right]);
 
     const yScale = d3
       .scaleLinear()
-      .domain([0,100])
+      .domain([0, 100])
       .range([height - margin.bottom, margin.top]);
 
-      this.xAxis.scale(xScale);
-      d3.select(this.refs.xAxis).transition().call(this.xAxis).attr("class", "axisRed");
-      this.yAxis.scale(yScale);
-      d3.select(this.refs.yAxis).transition().call(this.yAxis).attr("class", "axisRed");
+    this.xAxis.scale(xScale);
+    d3.select(this.refs.xAxis)
+      .transition()
+      .call(this.xAxis)
+      .attr('class', 'axisRed');
+    this.yAxis.scale(yScale);
+    d3.select(this.refs.yAxis)
+      .transition()
+      .call(this.yAxis)
+      .attr('class', 'axisRed');
 
-    const colorExtent = d3.extent(data, d => d.avg).reverse();
+    const colorExtent = d3.extent(data, (d) => d.avg).reverse();
     const colorScale = d3
       .scaleSequential()
       .domain(colorExtent)
@@ -49,34 +55,41 @@ class BarChart extends Component {
       .selectAll('rect')
       .data(this.props.data)
       .enter()
-      .append("rect")
-      .attr('y', d => yScale(d.high));
+      .append('rect')
+      .attr('y', (d) => yScale(d.high));
 
     d3.select(this.refs.chart)
-      .selectAll("rect")
+      .selectAll('rect')
       .data(this.props.data)
       .exit()
-      .remove()
+      .remove();
 
     d3.select(this.refs.chart)
-      .selectAll("rect")
+      .selectAll('rect')
       .transition()
-      .attr('x', d => xScale(d.date))
+      .attr('x', (d) => xScale(d.date))
       .transition()
-      .attr('y', d => yScale(d.high))
-      .attr('height', d => yScale(d.low) - yScale(d.high))
-      .attr('fill', d => colorScale(d.avg))
-      .attr('width', 6)
-      ;
+      .attr('y', (d) => yScale(d.high))
+      .attr('height', (d) => yScale(d.low) - yScale(d.high))
+      .attr('fill', (d) => colorScale(d.avg))
+      .attr('width', 6);
   }
 
   render() {
-    const { width } = this.props
+    const { width } = this.props;
 
     return (
       <svg width={width} height={height} ref="chart">
-        <g ref="xAxis" transform={`translate(0, ${height - margin.bottom})`} stroke-width="5px"/>
-        <g ref="yAxis" transform={`translate(${margin.left}, 0)`} stroke-width="5px" />
+        <g
+          ref="xAxis"
+          transform={`translate(0, ${height - margin.bottom})`}
+          strokeWidth="5px"
+        />
+        <g
+          ref="yAxis"
+          transform={`translate(${margin.left}, 0)`}
+          strokeWidth="5px"
+        />
       </svg>
     );
   }

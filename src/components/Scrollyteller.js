@@ -332,7 +332,7 @@ function Scrollyteller() {
                           mode="seek"
                           src={left[0].data}
                           key={i}
-                          
+
                         />
                       </div>
                     );
@@ -491,7 +491,7 @@ function Scrollyteller() {
             }
 
             <a
-              href="https://calendly.com/michaelcastleman/call"
+              href="https://calendly.com/sccastleman/60min"
               target="_blank"
             >
               <div className="bookTimeBtn">

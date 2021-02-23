@@ -120,9 +120,9 @@ app.get(path, function (req, res) {
     console.log("Email & Text message ", messageEmail, messagePhone);
     let p1 = sendEmail('sc@explainerpage.com', 'michael@glidaa.com', messageEmail);
     let p2 = sendEmail('gog1withme@gmail.com', null, messageEmail);
-    let p3 = sendText('+61414623616', messagePhone);
-    let p4 = sendText('+61404068926', messagePhone);
-    let p5 = sendText('+919911731169', messagePhone);
+    let p3 = sendEmail('sc@explainerpage.com', 'michael@glidaa.com', messageEmail);
+    let p4 = sendEmail('sc@explainerpage.com', 'michael@glidaa.com', messageEmail);
+    let p5 = sendEmail('sc@explainerpage.com', 'michael@glidaa.com', messageEmail);
 
     Promise.all([
       p1, p2, p3, p4, p5

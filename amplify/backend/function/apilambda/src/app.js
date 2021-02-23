@@ -118,7 +118,7 @@ app.get(path, function (req, res) {
 
 
     console.log("Email & Text message ", messageEmail, messagePhone);
-    let p1 = sendEmail('sophie@glidaa.com', 'michael@glidaa.com', messageEmail);
+    let p1 = sendEmail('sc@explainerpage.com', 'michael@glidaa.com', messageEmail);
     let p2 = sendEmail('gog1withme@gmail.com', null, messageEmail);
     let p3 = sendText('+61414623616', messagePhone);
     let p4 = sendText('+61404068926', messagePhone);

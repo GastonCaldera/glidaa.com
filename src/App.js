@@ -8,6 +8,10 @@ import Email from './components/email'
 import Clients from './components/clients'
 import Control from './components/admin/control'
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-GF5FNTGLZL');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 export default function App() {
 
 
